@@ -1,0 +1,54 @@
+body {
+    background-image: url(/public/resources/background-login.svg);
+    color: #162B5A;
+}
+
+.login {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.login-header {
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 3rem;
+}
+
+.login-account {
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    background-color: #EEEED0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+img {
+    width: 15rem;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+a {
+    color: #E74800;
+    text-align: left;
+}
+
+small {
+    font-size: small;
+}

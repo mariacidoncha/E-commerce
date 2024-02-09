@@ -1,0 +1,25 @@
+.group {
+    position: relative;
+}
+
+input {
+    width: 80%;
+    line-height: 3rem;
+    padding: 0 3rem;
+    border: none;
+    border-bottom: 2px solid #162B5A;
+    background-color: #EEEED0;
+    color: #162B5A;
+}
+
+input::placeholder {
+    color: #ADB5BD;
+}
+
+.input-img {
+    position: absolute;
+    top: 20%;
+    left: 3%;
+    width: 1.5rem;
+    color: #162B5A;
+}
