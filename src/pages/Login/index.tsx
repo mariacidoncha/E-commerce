@@ -10,7 +10,7 @@ import {
   setErrorInput,
   setSuccessInput,
 } from '../../utils';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export function Login() {
   const [email, setEmail] = useState('');
@@ -64,7 +64,6 @@ export function Login() {
         <img src="/resources/login-img.png" alt="Login image" />
       </section>
       <section className="login-account">
-        <Link to="/home">Home</Link>
         <div>
           <h2>Welcome</h2>
           <p>Enter your account here</p>
