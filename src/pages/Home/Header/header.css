@@ -1,0 +1,59 @@
+.home-header {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.65),
+      rgba(255, 255, 255, 0.65)
+    ),
+    url('/public/resources/background-login.svg');
+}
+
+.home-header-user {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.header-avatar {
+  border-radius: 50%;
+  width: 10%;
+}
+
+.header-search-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-align: left;
+}
+
+.header-search-group {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.header-search-icon {
+  position: absolute;
+  left: 1rem;
+  font-size: 1.2rem;
+}
+
+.header-search-input {
+  padding: 0 2.5rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background-color: #f2f2f2;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  transition: 0.3s ease;
+}
+
+.header-search-input::placeholder {
+  color: #adb5bd;
+}
+
+.header-search-input:focus {
+  outline: none;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 2px #adb5bd;
+}

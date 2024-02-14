@@ -1,0 +1,16 @@
+.filters-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.filters-header a {
+  font-size: 1.4rem;
+}
+
+.filters-cards {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-between;
+  padding: 0 2rem;
+}

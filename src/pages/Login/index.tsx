@@ -1,57 +1,74 @@
 import './login.css';
+import { ChangeEvent, FormEvent, useEffect, useReducer, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Form, Types, ActionForm } from '../../utils/interfaces/form';
 import { Input } from '../../components/common/input';
 import { Button } from '../../components/common/button';
-import { ChangeEvent, FormEvent, useState } from 'react';
 import { useAuthContext } from '../../components/layouts/AuthContext';
-import {
-  getUsers,
-  resetForm,
-  resetInput,
-  setErrorInput,
-  setSuccessInput,
-} from '../../utils';
-import { useNavigate } from 'react-router-dom';
+import { getUsers, resetForm, setErrorInput } from '../../utils';
+import { User } from '../../utils/interfaces/user';
+
+const initialState: Form = {
+  username: '',
+  password: '',
+};
+
+function reducer(state: Form, action: ActionForm): Form {
+  switch (action.type) {
+    case Types.ChangeEmail: {
+      return {
+        ...state,
+        username: action.value as string,
+      };
+    }
+    case Types.ChangePassword: {
+      return {
+        ...state,
+        password: action.value as string,
+      };
+    }
+    case Types.Reset: {
+      return initialState;
+    }
+    default: {
+      return state;
+    }
+  }
+}
 
 export function Login() {
-  const [email, setEmail] = useState('');
-  const [emailError, setEmailError] = useState('');
-  const [password, setPassword] = useState('');
+  const [state, dispatch] = useReducer(reducer, initialState);
+  const [users, setUsers] = useState([] as User[]);
+  const [usernameError, setUsernameError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const userAuth = useAuthContext();
   const navigate = useNavigate();
 
-  // useEffect(() => validateMail(), [email]);
+  useEffect(() => {
+    async function setUsersAPI() {
+      const response = await getUsers();
+      setUsers(response);
+    }
 
-  async function validateForm(e: FormEvent): Promise<void> {
+    setUsersAPI();
+  }, []);
+
+  async function validateForm(e: FormEvent<HTMLFormElement>): Promise<void> {
     e.preventDefault();
-    const users = await getUsers();
-    let userFound = users.find((user) => email === user.email);
+    let userFound = users.find((user) => state.username === user.username);
 
-    if (userFound && password === userFound.password) {
-      userAuth.setUser(userFound);
-      resetForm([e.target.email, e.target.password]);
-      navigate('/home');
-    } else {
+    resetForm([e.target.username, e.target.password]);
+
+    if (!userFound) {
+      setErrorInput(e.target.username);
+      setUsernameError('Email not registered');
+    } else if (state.password !== userFound.password) {
       setErrorInput(e.target.password);
       setPasswordError('Incorrect password');
-    }
-  }
-
-  async function validateMail(e: ChangeEvent) {
-    const emailInput = e.target;
-    setEmail(emailInput.value.trim());
-    const users = await getUsers();
-    let userFound = users.find(
-      (user) => emailInput.value.trim() === user.email
-    );
-
-    if (emailInput.value.trim() === '') {
-      resetInput(emailInput);
-    } else if (!userFound) {
-      setErrorInput(emailInput);
-      setEmailError('Email not registered');
     } else {
-      setSuccessInput(emailInput);
+      dispatch({ type: Types.Reset });
+      userAuth.setUser(userFound);
+      navigate('/home');
     }
   }
 
@@ -70,19 +87,26 @@ export function Login() {
         </div>
         <form onSubmit={validateForm}>
           <Input
-            name="email"
+            name="username"
             type="text"
-            text="email"
+            text="username"
             img="/resources/mail.svg"
-            handleChange={validateMail}
-            error={emailError}
+            value={state.username}
+            handleChange={(e: ChangeEvent<HTMLInputElement>) => {
+              dispatch({ type: Types.ChangeEmail, value: e.target.value });
+            }}
+            // handleChange={validateMail}
+            error={usernameError}
           />
           <Input
             name="password"
             type="password"
             text="password"
             img="/resources/lock.svg"
-            handleChange={(e: ChangeEvent) => setPassword(e.target.value)}
+            value={state.password}
+            handleChange={(e: ChangeEvent<HTMLInputElement>) =>
+              dispatch({ type: Types.ChangePassword, value: e.target.value })
+            }
             error={passwordError}
           />
           <a href="#" title="Forgot your password">

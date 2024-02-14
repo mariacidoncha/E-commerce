@@ -1,232 +1,242 @@
 [
-    {
-      "id": 1,
-      "name": "The Great Gatsby",
-      "year": "1925",
-      "author": {
-        "name": "F. Scott Fitzgerald",
-        "description": "Francis Scott Key Fitzgerald was an American writer of novels and short stories",
-        "image": "fitzgerald.jpg"
-      },
-      "synopsis": "A young man's quest for the American Dream in the 1920s",
-      "rate": "4.2",
-      "genre": ["Fiction", "Drama", "Romance"],
-      "options": [
-        {
-            "cover": "Hardcover",
-            "price": 12.99
-        },
-        {
-            "cover": "Ebook",
-            "price": 9.50
-        }
-      ]
+  {
+    "id": 1,
+    "name": "The Great Gatsby",
+    "image": "src/assets/covers/The_Great_Gatsby.jpg",
+    "year": "1925",
+    "author": {
+      "name": "F. Scott Fitzgerald",
+      "description": "Francis Scott Key Fitzgerald was an American writer of novels and short stories",
+      "image": "src/assets/authors/F_Scott_Fitzgerald.jpg"
     },
-    {
-      "id": 2,
-      "name": "To Kill a Mockingbird",
-      "year": "1960",
-      "author": {
-        "name": "Harper Lee",
-        "description": "Nelle Harper Lee was an American novelist and a Pulitzer Prize winner",
-        "image": "lee.jpg"
+    "synopsis": "A young man's quest for the American Dream in the 1920s",
+    "rate": 4.2,
+    "genre": ["Fiction", "Drama", "Romance"],
+    "options": [
+      {
+        "cover": "Hardcover",
+        "price": 12.99
       },
-      "synopsis": "A lawyer's fight against racial injustice in the 1930s",
-      "rate": "4.5",
-      "genre": ["Fiction", "Drama", "Coming-of-age"],
-      "options": [
-        {
-            "cover": "Paperback",
-            "price": 9.99
-        },
-        {
-            "cover": "Ebook",
-            "price": 5.99
-        }
-      ]
+      {
+        "cover": "Ebook",
+        "price": 9.5
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "To Kill a Mockingbird",
+    "image": "src/assets/covers/To_Kill_a_Mockingbird.jpg",
+    "year": "1960",
+    "author": {
+      "name": "Harper Lee",
+      "description": "Nelle Harper Lee was an American novelist and a Pulitzer Prize winner",
+      "image": "src/assets/authors/harper_lee.jpg"
     },
-    {
-      "id": 3,
-      "name": "1984",
-      "year": "1949",
-      "author": {
-        "name": "George Orwell",
-        "description": "Eric Arthur Blair, known by his pen name George Orwell, was an English novelist",
-        "image": "orwell.jpg"
+    "synopsis": "A lawyer's fight against racial injustice in the 1930s",
+    "rate": 4.5,
+    "genre": ["Fiction", "Drama", "Coming-of-age"],
+    "options": [
+      {
+        "cover": "Paperback",
+        "price": 9.99
       },
-      "synopsis": "A dystopian society ruled by a totalitarian regime",
-      "rate": "4.7",
-      "genre": ["Fiction", "Science Fiction", "Political Fiction"],
-      "options": [
-        {
-            "cover": "Hardcover",
-            "price": 10.99
-        },
-        {
-            "cover": "Kindle",
-            "price": 7.99
-        }
-      ]
+      {
+        "cover": "Ebook",
+        "price": 5.99
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "1984",
+    "image": "src/assets/covers/1984.jpg",
+    "year": "1949",
+    "author": {
+      "name": "George Orwell",
+      "description": "Eric Arthur Blair, known by his pen name George Orwell, was an English novelist",
+      "image": "src/assets/authors/George_Orwell.jpg"
     },
-    {
-      "id": 4,
-      "name": "Pride and Prejudice",
-      "year": "1813",
-      "author": {
-        "name": "Jane Austen",
-        "description": "Jane Austen was an English novelist known for her six major novels",
-        "image": "austen.jpg"
+    "synopsis": "A dystopian society ruled by a totalitarian regime",
+    "rate": 4.7,
+    "genre": ["Fiction", "Science Fiction", "Political Fiction"],
+    "options": [
+      {
+        "cover": "Hardcover",
+        "price": 10.99
       },
-      "synopsis": "The story of love, reputation, and societal expectations in 19th century England",
-      "rate": "4.6",
-      "genre": ["Fiction", "Romance", "Classic"],
-      "options": [
-        {
-            "cover": "Hardcover",
-            "price": 14.99
-        },
-        {
-            "cover": "Ebook",
-            "price": 7.50
-        }
-      ]
+      {
+        "cover": "Kindle",
+        "price": 7.99
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Pride and Prejudice",
+    "image": "src/assets/covers/Pride_and_Prejudice.jpg",
+    "year": "1813",
+    "author": {
+      "name": "Jane Austen",
+      "description": "Jane Austen was an English novelist known for her six major novels",
+      "image": "src/assets/authors/Jane_Austen.jpg"
     },
-    {
-      "id": 5,
-      "name": "The Lord of the Rings",
-      "year": "1954",
-      "author": {
-        "name": "J.R.R. Tolkien",
-        "description": "John Ronald Reuel Tolkien was an English writer, poet, and philologist",
-        "image": "tolkien.jpg"
+    "synopsis": "The story of love, reputation, and societal expectations in 19th century England",
+    "rate": 4.6,
+    "genre": ["Fiction", "Romance", "Classic"],
+    "options": [
+      {
+        "cover": "Hardcover",
+        "price": 14.99
       },
-      "synopsis": "A fantasy epic set in the world of Middle-earth",
-      "rate": "4.8",
-      "genre": ["Fiction", "Adventure", "High Fantasy"],
-      "options": [
-        {
-            "cover": "Paperback",
-            "price": 19.99
-        },
-        {
-            "cover": "Kindle",
-            "price": 8.50
-        }
-      ]
+      {
+        "cover": "Ebook",
+        "price": 7.5
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "The Lord of the Rings",
+    "image": "src/assets/covers/The_Lord_of_the_Rings.jpg",
+    "year": "1954",
+    "author": {
+      "name": "J.R.R. Tolkien",
+      "description": "John Ronald Reuel Tolkien was an English writer, poet, and philologist",
+      "image": "src/assets/authors/JRR_Tolkien.webp"
     },
-    {
-      "id": 6,
-      "name": "The Catcher in the Rye",
-      "year": "1951",
-      "author": {
-        "name": "J.D. Salinger",
-        "description": "Jerome David Salinger was an American writer known for his widely read novel",
-        "image": "salinger.jpg"
+    "synopsis": "A fantasy epic set in the world of Middle-earth",
+    "rate": 4.8,
+    "genre": ["Fiction", "Adventure", "High Fantasy"],
+    "options": [
+      {
+        "cover": "Paperback",
+        "price": 19.99
       },
-      "synopsis": "A teenager's alienation and identity crisis in post-World War II America",
-      "rate": "4.3",
-      "genre": ["Fiction", "Fiction", "Literary Fiction"],
-      "options": [
-        {
-            "cover": "Hardcover",
-            "price": 12.99
-        },
-        {
-            "cover": "Kindle",
-            "price": 6.99
-        }
-      ]
+      {
+        "cover": "Kindle",
+        "price": 8.5
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "The Catcher in the Rye",
+    "image": "src/assets/covers/The_Catcher_in_the_Rye.jpg",
+    "year": "1951",
+    "author": {
+      "name": "J.D. Salinger",
+      "description": "Jerome David Salinger was an American writer known for his widely read novel",
+      "image": "src/assets/authors/JD_Salinger.webp"
     },
-    {
-      "id": 7,
-      "name": "The Hobbit",
-      "year": "1937",
-      "author": {
-        "name": "J.R.R. Tolkien",
-        "description": "John Ronald Reuel Tolkien was an English writer, poet, and philologist",
-        "image": "tolkien.jpg"
+    "synopsis": "A teenager's alienation and identity crisis in post-World War II America",
+    "rate": 4.3,
+    "genre": ["Fiction", "Fiction", "Literary Fiction"],
+    "options": [
+      {
+        "cover": "Hardcover",
+        "price": 12.99
       },
-      "synopsis": "The prelude to the events in The Lord of the Rings",
-      "rate": "4.7",
-      "genre": ["Fiction", "Adventure", "Fantasy"],
-      "options": [
-        {
-            "cover": "Hardcover",
-            "price": 12.99
-        },
-        {
-            "cover": "Ebook",
-            "price": 6.99
-        }
-      ]
+      {
+        "cover": "Kindle",
+        "price": 6.99
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "The Hobbit",
+    "image": "src/assets/covers/The_Hobbit.jpg",
+    "year": "1937",
+    "author": {
+      "name": "J.R.R. Tolkien",
+      "description": "John Ronald Reuel Tolkien was an English writer, poet, and philologist",
+      "image": "src/assets/authors/JRR_Tolkien.webp"
     },
-    {
-      "id": 8,
-      "name": "To the Lighthouse",
-      "year": "1927",
-      "author": {
-        "name": "Virginia Woolf",
-        "description": "Adeline Virginia Woolf was an English writer, considered one of the most important modernist 20th-century authors",
-        "image": "woolf.jpg"
+    "synopsis": "The prelude to the events in The Lord of the Rings",
+    "rate": 4.7,
+    "genre": ["Fiction", "Adventure", "Fantasy"],
+    "options": [
+      {
+        "cover": "Hardcover",
+        "price": 12.99
       },
-      "synopsis": "The inner lives and thoughts of the Ramsay family and their guests",
-      "rate": "4.1",
-      "genre": ["Fiction", "Modernism", "Stream of Consciousness"],
-      "options": [
-        {
-            "cover": "Paperback",
-            "price": 10.99
-        },
-        {
-            "cover": "Kindle",
-            "price": 4.99
-        }
-      ]
+      {
+        "cover": "Ebook",
+        "price": 6.99
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "To the Lighthouse",
+    "image": "src/assets/covers/To_the_Lighthouse.jpg",
+    "year": "1927",
+    "author": {
+      "name": "Virginia Woolf",
+      "description": "Adeline Virginia Woolf was an English writer, considered one of the most important modernist 20th-century authors",
+      "image": "src/assets/authors/Virginia_Woolf.jpg"
     },
-    {
-      "id": 9,
-      "name": "The Alchemist",
-      "year": "1988",
-      "author": {
-        "name": "Paulo Coelho",
-        "description": "Paulo Coelho de Souza is a Brazilian lyricist and novelist",
-        "image": "coelho.jpg"
+    "synopsis": "The inner lives and thoughts of the Ramsay family and their guests",
+    "rate": 4.1,
+    "genre": ["Fiction", "Modernism", "Stream of Consciousness"],
+    "options": [
+      {
+        "cover": "Paperback",
+        "price": 10.99
       },
-      "synopsis": "A journey of self-discovery and spiritual awakening",
-      "rate": "4.4",
-      "genre": ["Fiction", "Philosophical Fiction", "Fantasy"],
-      "options": [
-        {
-            "cover": "Hardcover",
-            "price": 18.50
-        },
-        {
-            "cover": "Kindle",
-            "price": 8.99
-        }
-      ]
+      {
+        "cover": "Kindle",
+        "price": 4.99
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "The Alchemist",
+    "image": "src/assets/covers/The_Alchemist.jpg",
+    "year": "1988",
+    "author": {
+      "name": "Paulo Coelho",
+      "description": "Paulo Coelho de Souza is a Brazilian lyricist and novelist",
+      "image": "src/assets/authors/Paulo_Coelho.jpg"
     },
-    {
-      "id": 10,
-      "name": "The Chronicles of Narnia",
-      "year": "1950",
-      "author": {
-        "name": "C.S. Lewis",
-        "description": "Clive Staples Lewis was a British writer and lay theologian",
-        "image": "lewis.jpg"
+    "synopsis": "A journey of self-discovery and spiritual awakening",
+    "rate": 4.4,
+    "genre": ["Fiction", "Philosophical Fiction", "Fantasy"],
+    "options": [
+      {
+        "cover": "Hardcover",
+        "price": 18.5
       },
-      "synopsis": "The adventures of children in the magical world of Narnia",
-      "rate": "4.6",
-      "genre": ["Fiction", "Fantasy", "Children's Literature"],
-      "options": [
-        {
-            "cover": "Hardcover",
-            "price": 24.99
-        },
-        {
-            "cover": "Ebook",
-            "price": 12.99
-        }
-      ]
-    }
-  ]
+      {
+        "cover": "Kindle",
+        "price": 8.99
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "The Chronicles of Narnia",
+    "image": "src/assets/covers/The_Chronicles_of_Narnia.jpg",
+    "year": "1950",
+    "author": {
+      "name": "C.S. Lewis",
+      "description": "Clive Staples Lewis was a British writer and lay theologian",
+      "image": "src/assets/authors/CS_Lewis.webp"
+    },
+    "synopsis": "The adventures of children in the magical world of Narnia",
+    "rate": 4.6,
+    "genre": ["Fiction", "Fantasy", "Children's Literature"],
+    "options": [
+      {
+        "cover": "Hardcover",
+        "price": 24.99
+      },
+      {
+        "cover": "Ebook",
+        "price": 12.99
+      }
+    ]
+  }
+]

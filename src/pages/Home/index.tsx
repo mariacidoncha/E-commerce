@@ -1,8 +1,18 @@
-export interface IHomeProps {
-}
+import './home.css';
+import { Filters } from './Filters';
+import { Header } from './Header';
+import { NavBar } from './NavBar';
+import { Products } from './Products';
 
-export function Home (props: IHomeProps) {
+export interface IHomeProps {}
+
+export function Home(props: IHomeProps) {
   return (
-    <h1>Home page</h1>
+    <>
+      <NavBar />
+      <Header />
+      <Filters />
+      <Products />
+    </>
   );
 }

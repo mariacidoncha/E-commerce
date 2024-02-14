@@ -1,8 +1,9 @@
 [
   {
     "id": 1,
-    "name": "John Doe",
-    "password": "password123",
+    "name": "Maria Cidoncha",
+    "password": "pass123",
+    "username": "mariacidoncha",
     "email": "johndoe@gmail.com",
     "cart": [],
     "wishlist": [1, 5]
@@ -11,6 +12,7 @@
     "id": 2,
     "name": "Jane Smith",
     "password": "pass456",
+    "username": "janesmith",
     "email": "janesmith@gmail.com",
     "cart": [],
     "wishlist": [5]
@@ -19,6 +21,7 @@
     "id": 3,
     "name": "Mike Johnson",
     "password": "mikepass",
+    "username": "mikejohnson",
     "email": "mikejohnson@gmail.com",
     "cart": [],
     "wishlist": [3, 9, 10]
@@ -27,6 +30,7 @@
     "id": 4,
     "name": "Emily Davis",
     "password": "emily123",
+    "username": "emilydavis",
     "email": "emilydavis@gmail.com",
     "cart": [],
     "wishlist": [2, 7]
@@ -35,6 +39,7 @@
     "id": 5,
     "name": "Chris Wilson",
     "password": "wilsonpass",
+    "username": "chriswilson",
     "email": "chriswilson@gmail.com",
     "cart": [],
     "wishlist": []
@@ -43,6 +48,7 @@
     "id": 6,
     "name": "Sarah Thompson",
     "password": "thompson456",
+    "username": "sarahthompson",
     "email": "sarahthompson@gmail.com",
     "cart": [],
     "wishlist": [4, 6]
@@ -51,6 +57,7 @@
     "id": 7,
     "name": "David Brown",
     "password": "davidpass",
+    "username": "davidbrown",
     "email": "davidbrown@gmail.com",
     "cart": [],
     "wishlist": [7]
@@ -59,6 +66,7 @@
     "id": 8,
     "name": "Amy Miller",
     "password": "miller123",
+    "username": "amymiller",
     "email": "amymiller@gmail.com",
     "cart": [],
     "wishlist": []
@@ -67,6 +75,7 @@
     "id": 9,
     "name": "Mark Davis",
     "password": "markpass",
+    "username": "markdavis",
     "email": "markdavis@gmail.com",
     "cart": [],
     "wishlist": [3, 8]
@@ -75,6 +84,7 @@
     "id": 10,
     "name": "Lisa Wilson",
     "password": "lisapass",
+    "username": "lisawilson",
     "email": "lisawilson@gmail.com",
     "cart": [],
     "wishlist": [1]

@@ -1,5 +1,6 @@
 import { ReactNode, createContext, useContext, useState } from 'react';
 import { Outlet } from 'react-router-dom';
+import { User } from '../../utils/interfaces/user';
 
 interface IAuthContextProps {
   children?: ReactNode;
@@ -8,15 +9,6 @@ interface IAuthContextProps {
 interface AuthContextType {
   user: any;
   setUser: any;
-}
-
-interface User {
-  id: number;
-  name: string;
-  password: string;
-  email: string;
-  cart: number[];
-  wishlist: number[];
 }
 
 const AuthContext = createContext({} as AuthContextType);
