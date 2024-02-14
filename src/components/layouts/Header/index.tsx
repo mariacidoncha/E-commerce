@@ -1,5 +1,5 @@
 import './header.css';
-import { useAuthContext } from '../../../components/layouts/AuthContext';
+import { useAuthContext } from '../AuthContext';
 import { FaSearch } from 'react-icons/fa';
 import { ReactElement } from 'react';
 

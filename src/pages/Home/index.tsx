@@ -1,18 +1,21 @@
 import './home.css';
 import { Filters } from './Filters';
-import { Header } from './Header';
-import { NavBar } from './NavBar';
-import { Products } from './Products';
+import { Header } from '../../components/layouts/Header';
+import { NavBar } from '../../components/layouts/NavBar';
+import { ProductsSection } from '../../components/layouts/ProductsSection';
+import { Link } from 'react-router-dom';
 
-export interface IHomeProps {}
-
-export function Home(props: IHomeProps) {
+export function Home() {
   return (
     <>
       <NavBar />
       <Header />
       <Filters />
-      <Products />
+      <section className="popular-header">
+        <h3>Most popular</h3>
+        <Link to="/products">See all</Link>
+      </section>
+      <ProductsSection max={5} />
     </>
   );
 }

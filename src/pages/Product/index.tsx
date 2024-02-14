@@ -1,8 +1,16 @@
-export interface IProductProps {
-}
+import { Header } from '../../components/layouts/Header';
+import { NavBar } from '../../components/layouts/NavBar';
+import { ProductsSection } from '../../components/layouts/ProductsSection';
 
-export function Product (props: IProductProps) {
+export interface IProductProps {}
+
+export function Product(props: IProductProps) {
   return (
-    <h1>Product page</h1>
+    <>
+      <Header />
+      <h2>Books section</h2>
+      <ProductsSection />
+      <NavBar />
+    </>
   );
 }
