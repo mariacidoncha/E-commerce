@@ -1,8 +1,12 @@
-export interface ICartProps {
-}
+import { NavBar } from '../../components/layouts/NavBar';
 
-export function Cart (props: ICartProps) {
+export interface ICartProps {}
+
+export function Cart(props: ICartProps) {
   return (
-    <h1>Cart page</h1>
+    <>
+      <p>Cart page</p>
+      <NavBar />
+    </>
   );
 }

@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
-import { useAuthContext } from './AuthContext';
+import { useAuthContext } from '../../contexts/AuthContext';
 
 export interface IProtectedRouteProps {
   children?: ReactNode;

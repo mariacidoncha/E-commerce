@@ -1,15 +1,16 @@
+import { ReactNode, useState } from 'react';
 import { Header } from '../../components/layouts/Header';
 import { NavBar } from '../../components/layouts/NavBar';
 import { ProductsSection } from '../../components/layouts/ProductsSection';
 
-export interface IProductProps {}
+export function Product(): ReactNode {
+  const [filter, setFilter] = useState('');
 
-export function Product(props: IProductProps) {
   return (
     <>
-      <Header />
+      <Header filter={filter} setFilter={setFilter} />
       <h2>Books section</h2>
-      <ProductsSection />
+      <ProductsSection filter={filter} />
       <NavBar />
     </>
   );

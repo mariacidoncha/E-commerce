@@ -2,6 +2,7 @@ import './productCard.css';
 import { Link } from 'react-router-dom';
 import { FaRegHeart, FaPlus, FaStar } from 'react-icons/fa';
 import { Button } from '../../../common/button';
+import { ReactNode } from 'react';
 
 export interface IProductCardProps {
   id: string;
@@ -12,7 +13,7 @@ export interface IProductCardProps {
   rating: number;
 }
 
-export function ProductCard(props: IProductCardProps) {
+export function ProductCard(props: IProductCardProps): ReactNode {
   const rate = Math.floor(props.rating);
   const stars = Array.from({ length: rate }, (_e, i) => (
     <FaStar fill="#F7BC13" key={i} />

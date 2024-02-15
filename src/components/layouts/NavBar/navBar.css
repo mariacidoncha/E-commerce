@@ -11,3 +11,22 @@
   bottom: 0;
   width: calc(100% - 8rem);
 }
+
+.active {
+  background-color: #e74800;
+  padding: 0 1.5rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.active p {
+  display: flex;
+  color: #eeeed0;
+  font-weight: bold;
+}
+
+p {
+  display: none;
+}

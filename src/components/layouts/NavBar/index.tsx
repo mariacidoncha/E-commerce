@@ -1,21 +1,29 @@
+import { ReactNode } from 'react';
 import './navBar.css';
-import { IoHomeOutline, IoCartOutline } from 'react-icons/io5';
-import { FaRegHeart, FaRegUser } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import {
+  IoHomeOutline,
+  IoCartOutline,
+  IoHeartOutline,
+  IoPersonOutline,
+} from 'react-icons/io5';
+import { NavLink } from 'react-router-dom';
 
-export interface INavBarProps {}
-
-export function NavBar(props: INavBarProps) {
+export function NavBar(): ReactNode {
   return (
     <section className="nav">
-      <Link to="/home">
+      <NavLink
+        to="/home"
+        className={({ isActive }) => (isActive ? 'active' : '')}
+      >
         <IoHomeOutline stroke="#EEEED0" />
-      </Link>
-      <Link to="/cart">
+        <p>Home</p>
+      </NavLink>
+      <NavLink to="/cart">
         <IoCartOutline stroke="#EEEED0" />
-      </Link>
-      <FaRegHeart fill="#EEEED0" />
-      <FaRegUser fill="#EEEED0" />
+        <p>Cart</p>
+      </NavLink>
+      <IoHeartOutline stroke="#EEEED0" />
+      <IoPersonOutline stroke="#EEEED0" />
     </section>
   );
 }

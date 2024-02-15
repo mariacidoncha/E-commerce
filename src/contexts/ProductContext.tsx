@@ -1,6 +1,6 @@
 import { ReactNode, createContext, useContext, useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import { Product } from '../../utils/interfaces/product';
+import { Product } from '../utils/interfaces/product';
 
 interface IProductContextProps {
   children?: ReactNode;
