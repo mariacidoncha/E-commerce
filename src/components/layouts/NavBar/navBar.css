@@ -21,12 +21,12 @@
   gap: 0.5rem;
 }
 
-.active p {
+.active .description {
   display: flex;
   color: #eeeed0;
   font-weight: bold;
 }
 
-p {
+.description {
   display: none;
 }

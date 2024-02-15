@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { useProductContext } from '../../contexts/ProductContext';
+import { useProductContext } from '../../context/ProductContext';
 import { NavBar } from '../../components/layouts/NavBar';
 
 export interface IProductDetailProps {}

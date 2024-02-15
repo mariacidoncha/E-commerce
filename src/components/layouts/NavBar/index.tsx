@@ -16,11 +16,11 @@ export function NavBar(): ReactNode {
         className={({ isActive }) => (isActive ? 'active' : '')}
       >
         <IoHomeOutline stroke="#EEEED0" />
-        <p>Home</p>
+        <p className="description">Home</p>
       </NavLink>
       <NavLink to="/cart">
         <IoCartOutline stroke="#EEEED0" />
-        <p>Cart</p>
+        <p className="description">Cart</p>
       </NavLink>
       <IoHeartOutline stroke="#EEEED0" />
       <IoPersonOutline stroke="#EEEED0" />

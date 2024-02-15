@@ -7,7 +7,7 @@ interface IAuthContextProps {
 }
 
 interface AuthContextType {
-  user: any;
+  user: User | null;
   setUser: any;
 }
 

@@ -1,5 +1,5 @@
 import './header.css';
-import { useAuthContext } from '../../../contexts/AuthContext';
+import { useAuthContext } from '../../../context/AuthContext';
 import { FaSearch } from 'react-icons/fa';
 import { ChangeEvent, Dispatch, ReactElement, SetStateAction } from 'react';
 import { useSearchParams } from 'react-router-dom';

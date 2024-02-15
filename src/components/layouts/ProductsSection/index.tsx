@@ -1,7 +1,7 @@
 import './productsSection.css';
 import { ReactNode } from 'react';
 import { ProductCard } from './ProductCard';
-import { useProductContext } from '../../../contexts/ProductContext';
+import { useProductContext } from '../../../context/ProductContext';
 
 export interface IProductsSectionProps {
   max?: number;

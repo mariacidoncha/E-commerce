@@ -5,7 +5,7 @@ import { Filters } from './Filters';
 import { Header } from '../../components/layouts/Header';
 import { NavBar } from '../../components/layouts/NavBar';
 import { ProductsSection } from '../../components/layouts/ProductsSection';
-import { useProductContext } from '../../contexts/ProductContext';
+import { useProductContext } from '../../context/ProductContext';
 import { getProducts } from '../../utils';
 
 export function Home() {

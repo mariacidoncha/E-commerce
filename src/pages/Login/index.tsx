@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Form, Types, ActionForm } from '../../utils/interfaces/form';
 import { Input } from '../../components/common/input';
 import { Button } from '../../components/common/button';
-import { useAuthContext } from '../../contexts/AuthContext';
+import { useAuthContext } from '../../context/AuthContext';
 import { getUsers, resetForm, setErrorInput } from '../../utils';
 import { User } from '../../utils/interfaces/user';
 
