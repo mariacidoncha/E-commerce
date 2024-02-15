@@ -1,28 +1,16 @@
 import './productsSection.css';
-import { ReactNode, useEffect, useState } from 'react';
-import { getProducts } from '../../../utils';
-import { Product } from '../../../utils/interfaces/product';
+import { ReactNode } from 'react';
 import { ProductCard } from './ProductCard';
+import { useProductContext } from '../ProductContext';
 
 export interface IProductsSectionProps {
   max?: number;
 }
 
 export function ProductsSection(props: IProductsSectionProps): ReactNode {
-  const [products, setProducts] = useState([] as Product[]);
-  const max = props.max ? props.max : products.length;
-  const showProducts = products.slice(0, max);
-
-  useEffect(() => {
-    async function setUsersAPI() {
-      const response = await getProducts();
-      setProducts(response);
-    }
-
-    setUsersAPI();
-  }, []);
-
-  console.log(products);
+  const products = useProductContext();
+  const max = props.max ? props.max : products.products.length;
+  const showProducts = products.products.slice(0, max);
 
   return (
     <section className="popular-items">
@@ -30,6 +18,7 @@ export function ProductsSection(props: IProductsSectionProps): ReactNode {
         return (
           <ProductCard
             key={id}
+            id={id}
             image={image}
             name={name}
             author={author.name}

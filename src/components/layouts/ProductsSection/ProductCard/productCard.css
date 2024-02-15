@@ -3,10 +3,12 @@
   background-color: #eeeed0;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
+
+  height: 90%;
 }
 
 .card-img {
-  width: 80%;
+  width: 70%;
 }
 
 .card-header {

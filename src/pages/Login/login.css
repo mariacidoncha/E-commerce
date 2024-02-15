@@ -44,8 +44,11 @@ form {
 }
 
 a {
-  color: #e74800;
   text-align: left;
+}
+
+a span {
+  color: #e74800;
 }
 
 small {

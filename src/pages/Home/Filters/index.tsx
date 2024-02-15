@@ -24,7 +24,9 @@ export function Filters(): ReactElement {
     <>
       <section className="filters-header">
         <h3>Book category</h3>
-        <a href="#">See all</a>
+        <a href="#">
+          <span>See all</span>
+        </a>
       </section>
       <section className="filters-cards">
         {categories.map(({ id, name, icon }) => {

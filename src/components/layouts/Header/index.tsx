@@ -11,13 +11,17 @@ export function Header(): ReactElement {
       <section className="home-header-user">
         <img
           className="header-avatar"
-          src={`https://unavatar.io/github/${userAuth.user.username}`}
-          alt={`${userAuth.user.name} avatar`}
+          src={`https://unavatar.io/github/${
+            userAuth.user.username ? userAuth.user.username : 'default'
+          }`}
+          alt={`${
+            userAuth.user.name ? userAuth.user.username : 'default'
+          } avatar`}
         />
         <h2>Welcome, {userAuth.user.name}</h2>
       </section>
       <section>
-        <p className="header-search-title">Find your favourite book</p>
+        <p className="header-search-title">Find your favorite book</p>
         <div className="header-search-group">
           <span className="header-search-icon">
             <FaSearch />

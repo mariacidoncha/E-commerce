@@ -1,14 +1,16 @@
 import './button.css';
+import { ReactNode } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 
 interface IButtonProps {
-  text: string;
+  children: ReactNode;
+  size?: string;
 }
 
 export function Button(props: IButtonProps) {
   return (
-    <button>
-      {props.text}
+    <button style={{ fontSize: props.size }}>
+      {props.children}
       <FaArrowRight />
     </button>
   );

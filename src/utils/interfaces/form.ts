@@ -1,5 +1,5 @@
 export interface Form {
-  email: string;
+  username: string;
   password: string;
 }
 

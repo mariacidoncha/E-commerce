@@ -26,7 +26,7 @@ export function resetForm(inputs: Element[]) {
 
 export async function getUsers(): Promise<User[]> {
   try {
-    const response = await fetch('src/data/users.json');
+    const response = await fetch('src/assets/data/users.json');
     const JSONResponse = await response.json();
     return JSONResponse;
   } catch (error) {
@@ -36,7 +36,7 @@ export async function getUsers(): Promise<User[]> {
 
 export async function getProducts(): Promise<Product[]> {
   try {
-    const response = await fetch('src/data/books.json');
+    const response = await fetch('src/assets/data/books.json');
     const JSONResponse = await response.json();
     return JSONResponse;
   } catch (error) {

@@ -1,13 +1,13 @@
 [
   {
-    "id": 1,
+    "id": "1",
     "name": "The Great Gatsby",
-    "image": "src/assets/covers/The_Great_Gatsby.jpg",
+    "image": "src/assets/covers/The_Great_Gatsby.webp",
     "year": "1925",
     "author": {
       "name": "F. Scott Fitzgerald",
       "description": "Francis Scott Key Fitzgerald was an American writer of novels and short stories",
-      "image": "src/assets/authors/F_Scott_Fitzgerald.jpg"
+      "image": "src/assets/authors/F_Scott_Fitzgerald.webp"
     },
     "synopsis": "A young man's quest for the American Dream in the 1920s",
     "rate": 4.2,
@@ -24,14 +24,14 @@
     ]
   },
   {
-    "id": 2,
+    "id": "2",
     "name": "To Kill a Mockingbird",
-    "image": "src/assets/covers/To_Kill_a_Mockingbird.jpg",
+    "image": "src/assets/covers/To_Kill_a_Mockingbird.webp",
     "year": "1960",
     "author": {
       "name": "Harper Lee",
       "description": "Nelle Harper Lee was an American novelist and a Pulitzer Prize winner",
-      "image": "src/assets/authors/harper_lee.jpg"
+      "image": "src/assets/authors/harper_lee.webp"
     },
     "synopsis": "A lawyer's fight against racial injustice in the 1930s",
     "rate": 4.5,
@@ -48,14 +48,14 @@
     ]
   },
   {
-    "id": 3,
+    "id": "3",
     "name": "1984",
-    "image": "src/assets/covers/1984.jpg",
+    "image": "src/assets/covers/1984.webp",
     "year": "1949",
     "author": {
       "name": "George Orwell",
       "description": "Eric Arthur Blair, known by his pen name George Orwell, was an English novelist",
-      "image": "src/assets/authors/George_Orwell.jpg"
+      "image": "src/assets/authors/George_Orwell.webp"
     },
     "synopsis": "A dystopian society ruled by a totalitarian regime",
     "rate": 4.7,
@@ -72,14 +72,14 @@
     ]
   },
   {
-    "id": 4,
+    "id": "4",
     "name": "Pride and Prejudice",
-    "image": "src/assets/covers/Pride_and_Prejudice.jpg",
+    "image": "src/assets/covers/Pride_and_Prejudice.webp",
     "year": "1813",
     "author": {
       "name": "Jane Austen",
       "description": "Jane Austen was an English novelist known for her six major novels",
-      "image": "src/assets/authors/Jane_Austen.jpg"
+      "image": "src/assets/authors/Jane_Austen.webp"
     },
     "synopsis": "The story of love, reputation, and societal expectations in 19th century England",
     "rate": 4.6,
@@ -96,9 +96,9 @@
     ]
   },
   {
-    "id": 5,
+    "id": "5",
     "name": "The Lord of the Rings",
-    "image": "src/assets/covers/The_Lord_of_the_Rings.jpg",
+    "image": "src/assets/covers/The_Lord_of_the_Rings.webp",
     "year": "1954",
     "author": {
       "name": "J.R.R. Tolkien",
@@ -120,9 +120,9 @@
     ]
   },
   {
-    "id": 6,
+    "id": "6",
     "name": "The Catcher in the Rye",
-    "image": "src/assets/covers/The_Catcher_in_the_Rye.jpg",
+    "image": "src/assets/covers/The_Catcher_in_the_Rye.webp",
     "year": "1951",
     "author": {
       "name": "J.D. Salinger",
@@ -144,9 +144,9 @@
     ]
   },
   {
-    "id": 7,
+    "id": "7",
     "name": "The Hobbit",
-    "image": "src/assets/covers/The_Hobbit.jpg",
+    "image": "src/assets/covers/The_Hobbit.webp",
     "year": "1937",
     "author": {
       "name": "J.R.R. Tolkien",
@@ -168,14 +168,14 @@
     ]
   },
   {
-    "id": 8,
+    "id": "8",
     "name": "To the Lighthouse",
-    "image": "src/assets/covers/To_the_Lighthouse.jpg",
+    "image": "src/assets/covers/To_the_Lighthouse.webp",
     "year": "1927",
     "author": {
       "name": "Virginia Woolf",
       "description": "Adeline Virginia Woolf was an English writer, considered one of the most important modernist 20th-century authors",
-      "image": "src/assets/authors/Virginia_Woolf.jpg"
+      "image": "src/assets/authors/Virginia_Woolf.webp"
     },
     "synopsis": "The inner lives and thoughts of the Ramsay family and their guests",
     "rate": 4.1,
@@ -192,14 +192,14 @@
     ]
   },
   {
-    "id": 9,
+    "id": "9",
     "name": "The Alchemist",
-    "image": "src/assets/covers/The_Alchemist.jpg",
+    "image": "src/assets/covers/The_Alchemist.webp",
     "year": "1988",
     "author": {
       "name": "Paulo Coelho",
       "description": "Paulo Coelho de Souza is a Brazilian lyricist and novelist",
-      "image": "src/assets/authors/Paulo_Coelho.jpg"
+      "image": "src/assets/authors/Paulo_Coelho.webp"
     },
     "synopsis": "A journey of self-discovery and spiritual awakening",
     "rate": 4.4,
@@ -216,9 +216,9 @@
     ]
   },
   {
-    "id": 10,
+    "id": "10",
     "name": "The Chronicles of Narnia",
-    "image": "src/assets/covers/The_Chronicles_of_Narnia.jpg",
+    "image": "src/assets/covers/The_Chronicles_of_Narnia.webp",
     "year": "1950",
     "author": {
       "name": "C.S. Lewis",

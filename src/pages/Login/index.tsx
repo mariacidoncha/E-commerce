@@ -110,13 +110,13 @@ export function Login() {
             error={passwordError}
           />
           <a href="#" title="Forgot your password">
-            Forgot your password?
+            <span>Forgot your password?</span>
           </a>
-          <Button text="Log in" />
+          <Button> Log in </Button>
           <p>
             Not registered yet?{' '}
             <a href="#" title="Create an account">
-              Create an account
+              <span>Create an account</span>
             </a>
           </p>
         </form>
