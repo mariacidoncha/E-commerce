@@ -1,9 +1,11 @@
 import './cartCard.css';
 import { Product } from '../../../utils/interfaces/product';
 import { IoHeartOutline, IoTrashOutline } from 'react-icons/io5';
+import { ProductCart } from '../../../utils/interfaces/user';
 
 export interface ICartCardProps {
   product: Product;
+  userOptions: ProductCart;
 }
 
 export function CartCard(props: ICartCardProps) {
@@ -22,7 +24,7 @@ export function CartCard(props: ICartCardProps) {
           <IoTrashOutline className="icon primary-color" />
           <span>
             <button>-</button>
-
+            {props.userOptions.quantity}
             <button>+</button>
           </span>
         </section>

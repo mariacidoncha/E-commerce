@@ -19,10 +19,17 @@ export function Cart(props: ICartProps) {
       </section>
       <section className="products-section">
         {user.user?.cart.map((userProduct) => {
+          console.log('🚀 ~ {user.user?.cart.map ~ userProduct:', userProduct);
           const cartProduct = products.products.find(
-            (p) => parseInt(p.id) === userProduct
+            (p) => parseInt(p.id) === userProduct.id
           ) as Product;
-          return <CartCard key={cartProduct?.id} product={cartProduct} />;
+          return (
+            <CartCard
+              key={cartProduct?.id}
+              product={cartProduct}
+              userOptions={userProduct}
+            />
+          );
         })}
       </section>
       <NavBar />

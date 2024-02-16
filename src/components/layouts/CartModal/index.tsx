@@ -1,4 +1,5 @@
 import './cartModal.css';
+import toast, { Toaster } from 'react-hot-toast';
 import { Button } from '../../common/button';
 import { IoHeartOutline } from 'react-icons/io5';
 import { useReducer } from 'react';
@@ -7,9 +8,11 @@ import {
   AddProduct,
   TypesAddProduct,
 } from '../../../utils/interfaces/product';
+import { useAuthContext } from '../../../context/AuthContext';
 
 export interface ICartModalProps {
   price: string;
+  idProduct: string;
 }
 
 function reducer(state: AddProduct, action: ActionAddProduct): AddProduct {
@@ -38,6 +41,7 @@ export function CartModal(props: ICartModalProps) {
     quantity: 1,
   };
   const [state, dispatch] = useReducer(reducer, initialState);
+  const user = useAuthContext();
 
   function handleClickAdd() {
     dispatch({ type: TypesAddProduct.AddProduct });
@@ -47,9 +51,37 @@ export function CartModal(props: ICartModalProps) {
     dispatch({ type: TypesAddProduct.SubtractProduct });
   }
 
+  function handleClickAddProduct() {
+    const added = user.user?.cart.find((e) => {
+      return e.id.toString() === props.idProduct;
+    });
+
+    if (!added) {
+      user.user?.cart.push({
+        id: parseInt(props.idProduct),
+        quantity: state.quantity,
+      });
+      toast.success('Successfully added!', {
+        icon: '👏',
+        style: {
+          fontSize: '1.5rem',
+        },
+      });
+    } else {
+      toast.success('Successfully added!', {
+        icon: '👏',
+        style: {
+          fontSize: '1.5rem',
+        },
+      });
+      added.quantity = added.quantity + state.quantity;
+    }
+  }
+
   return (
     <section className="modal-section">
       <section className="price-section">
+        <Toaster />
         <p className="price">{state.price} €</p>
         <section className="quantity-section">
           <Button handle={handleClickSubtract} icon size="2rem">
@@ -65,7 +97,9 @@ export function CartModal(props: ICartModalProps) {
         <button className="wish-btn">
           <IoHeartOutline stroke="#EEEED0" />
         </button>
-        <Button size="2rem">Add to cart</Button>
+        <Button handle={handleClickAddProduct} size="2rem">
+          Add to cart
+        </Button>
       </section>
     </section>
   );

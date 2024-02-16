@@ -5,7 +5,10 @@
     "password": "pass123",
     "username": "mariacidoncha",
     "email": "johndoe@gmail.com",
-    "cart": [1, 5],
+    "cart": [
+      { "id": 1, "quantity": 2 },
+      { "id": 5, "quantity": 1 }
+    ],
     "wishlist": [1, 5]
   },
   {

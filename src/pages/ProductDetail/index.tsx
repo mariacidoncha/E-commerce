@@ -84,7 +84,7 @@ export function ProductDetail() {
         />
         <p className="book-synopsis">{showProduct.author.description}</p>
       </section>
-      <CartModal price={price} />
+      <CartModal price={price} idProduct={showProduct.id} />
       <NavBar />
     </>
   );
