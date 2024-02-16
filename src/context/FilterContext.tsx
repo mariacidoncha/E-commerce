@@ -16,9 +16,11 @@ interface ProductContextType {
   setFilter: any;
 }
 
-const FilterContext = createContext<ProductContextType>(
-  {} as ProductContextType
-);
+// Inicializamos con un ProductContextType "vacío"
+const FilterContext = createContext<ProductContextType>({
+  filter: { param: '', type: FilterType.name },
+  setFilter: () => {},
+});
 
 export function FilterContextProvider(props: IFilterContextProps) {
   const [filter, setFilter] = useState<Filter>({

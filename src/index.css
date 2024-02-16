@@ -2,21 +2,24 @@ h1 {
   font-size: 4rem;
   font-weight: bold;
   color: white;
-  /* color: var(--white); */
 }
 
 h1 span {
   font-size: 4rem;
   font-weight: 100;
-  /* color: var(--white); */
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 500;
 }
 
 h3 {
   font-size: 1.6rem;
   font-weight: 500;
+}
+
+h4 {
+  font-size: 1.6rem;
+  font-weight: lighter;
 }

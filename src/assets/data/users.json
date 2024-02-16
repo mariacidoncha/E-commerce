@@ -5,7 +5,7 @@
     "password": "pass123",
     "username": "mariacidoncha",
     "email": "johndoe@gmail.com",
-    "cart": [],
+    "cart": [1, 5],
     "wishlist": [1, 5]
   },
   {

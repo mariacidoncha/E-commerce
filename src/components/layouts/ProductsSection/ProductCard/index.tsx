@@ -20,7 +20,7 @@ export function ProductCard(props: IProductCardProps): ReactNode {
   ));
 
   return (
-    <Link to={`/products/${props.id}`}>
+    <Link to={`/${props.id}`}>
       <article className="card">
         <section className="card-header">
           <img

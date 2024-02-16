@@ -1,5 +1,5 @@
 import './login.css';
-import { ChangeEvent, FormEvent, useEffect, useReducer, useState } from 'react';
+import { ChangeEvent, useEffect, useReducer, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Form, Types, ActionForm } from '../../utils/interfaces/form';
 import { Input } from '../../components/common/input';
@@ -53,17 +53,18 @@ export function Login() {
     setUsersAPI();
   }, []);
 
-  async function validateForm(e: FormEvent<HTMLFormElement>): Promise<void> {
+  async function validateForm(e: ChangeEvent<HTMLFormElement>): Promise<void> {
     e.preventDefault();
     let userFound = users.find((user) => state.username === user.username);
+    const { username, password } = e.target;
 
-    resetForm([e.target.username, e.target.password]);
+    resetForm([username, password]);
 
     if (!userFound) {
-      setErrorInput(e.target.username);
+      setErrorInput(username);
       setUsernameError('Email not registered');
     } else if (state.password !== userFound.password) {
-      setErrorInput(e.target.password);
+      setErrorInput(password);
       setPasswordError('Incorrect password');
     } else {
       dispatch({ type: Types.Reset });

@@ -6,10 +6,10 @@
     "year": "1925",
     "author": {
       "name": "F. Scott Fitzgerald",
-      "description": "Francis Scott Key Fitzgerald was an American writer of novels and short stories",
+      "description": "Francis Scott Key Fitzgerald was an American writer of novels and short stories.",
       "image": "src/assets/authors/F_Scott_Fitzgerald.webp"
     },
-    "synopsis": "A young man's quest for the American Dream in the 1920s",
+    "synopsis": "A young man's quest for the American Dream in the 1920s.",
     "rate": 4.2,
     "genre": ["Fiction", "Drama", "Romance"],
     "options": [
@@ -30,10 +30,10 @@
     "year": "1960",
     "author": {
       "name": "Harper Lee",
-      "description": "Nelle Harper Lee was an American novelist and a Pulitzer Prize winner",
+      "description": "Nelle Harper Lee was an American novelist and a Pulitzer Prize winner.",
       "image": "src/assets/authors/harper_lee.webp"
     },
-    "synopsis": "A lawyer's fight against racial injustice in the 1930s",
+    "synopsis": "A lawyer's fight against racial injustice in the 1930s.",
     "rate": 4.5,
     "genre": ["Fiction", "Drama", "Coming-of-age"],
     "options": [
@@ -54,10 +54,10 @@
     "year": "1949",
     "author": {
       "name": "George Orwell",
-      "description": "Eric Arthur Blair, known by his pen name George Orwell, was an English novelist",
+      "description": "Eric Arthur Blair, known by his pen name George Orwell, was an English novelist.",
       "image": "src/assets/authors/George_Orwell.webp"
     },
-    "synopsis": "A dystopian society ruled by a totalitarian regime",
+    "synopsis": "A dystopian society ruled by a totalitarian regime.",
     "rate": 4.7,
     "genre": ["Fiction", "Science Fiction", "Political Fiction"],
     "options": [
@@ -78,10 +78,10 @@
     "year": "1813",
     "author": {
       "name": "Jane Austen",
-      "description": "Jane Austen was an English novelist known for her six major novels",
+      "description": "Jane Austen was an English novelist known for her six major novels.",
       "image": "src/assets/authors/Jane_Austen.webp"
     },
-    "synopsis": "The story of love, reputation, and societal expectations in 19th century England",
+    "synopsis": "The story of love, reputation, and societal expectations in 19th century England.",
     "rate": 4.6,
     "genre": ["Fiction", "Romance", "Classic"],
     "options": [
@@ -102,10 +102,10 @@
     "year": "1954",
     "author": {
       "name": "J.R.R. Tolkien",
-      "description": "John Ronald Reuel Tolkien was an English writer, poet, and philologist",
+      "description": "John Ronald Reuel Tolkien was an English writer, poet, and philologist.",
       "image": "src/assets/authors/JRR_Tolkien.webp"
     },
-    "synopsis": "A fantasy epic set in the world of Middle-earth",
+    "synopsis": "A fantasy epic set in the world of Middle-earth.",
     "rate": 4.8,
     "genre": ["Fiction", "Adventure", "High Fantasy"],
     "options": [
@@ -126,10 +126,10 @@
     "year": "1951",
     "author": {
       "name": "J.D. Salinger",
-      "description": "Jerome David Salinger was an American writer known for his widely read novel",
+      "description": "Jerome David Salinger was an American writer known for his widely read novel.",
       "image": "src/assets/authors/JD_Salinger.webp"
     },
-    "synopsis": "A teenager's alienation and identity crisis in post-World War II America",
+    "synopsis": "A teenager's alienation and identity crisis in post-World War II America.",
     "rate": 4.3,
     "genre": ["Fiction", "Fiction", "Literary Fiction"],
     "options": [
@@ -150,10 +150,10 @@
     "year": "1937",
     "author": {
       "name": "J.R.R. Tolkien",
-      "description": "John Ronald Reuel Tolkien was an English writer, poet, and philologist",
+      "description": "John Ronald Reuel Tolkien was an English writer, poet, and philologist.",
       "image": "src/assets/authors/JRR_Tolkien.webp"
     },
-    "synopsis": "The prelude to the events in The Lord of the Rings",
+    "synopsis": "The prelude to the events in The Lord of the Rings.",
     "rate": 4.7,
     "genre": ["Fiction", "Adventure", "Fantasy"],
     "options": [
@@ -174,10 +174,10 @@
     "year": "1927",
     "author": {
       "name": "Virginia Woolf",
-      "description": "Adeline Virginia Woolf was an English writer, considered one of the most important modernist 20th-century authors",
+      "description": "Adeline Virginia Woolf was an English writer, considered one of the most important modernist 20th-century authors.",
       "image": "src/assets/authors/Virginia_Woolf.webp"
     },
-    "synopsis": "The inner lives and thoughts of the Ramsay family and their guests",
+    "synopsis": "The inner lives and thoughts of the Ramsay family and their guests.",
     "rate": 4.1,
     "genre": ["Fiction", "Modernism", "Stream of Consciousness"],
     "options": [
@@ -198,10 +198,10 @@
     "year": "1988",
     "author": {
       "name": "Paulo Coelho",
-      "description": "Paulo Coelho de Souza is a Brazilian lyricist and novelist",
+      "description": "Paulo Coelho de Souza is a Brazilian lyricist and novelist.",
       "image": "src/assets/authors/Paulo_Coelho.webp"
     },
-    "synopsis": "A journey of self-discovery and spiritual awakening",
+    "synopsis": "A journey of self-discovery and spiritual awakening.",
     "rate": 4.4,
     "genre": ["Fiction", "Philosophical Fiction", "Fantasy"],
     "options": [
@@ -222,10 +222,10 @@
     "year": "1950",
     "author": {
       "name": "C.S. Lewis",
-      "description": "Clive Staples Lewis was a British writer and lay theologian",
+      "description": "Clive Staples Lewis was a British writer and lay theologian.",
       "image": "src/assets/authors/CS_Lewis.webp"
     },
-    "synopsis": "The adventures of children in the magical world of Narnia",
+    "synopsis": "The adventures of children in the magical world of Narnia.",
     "rate": 4.6,
     "genre": ["Fiction", "Fantasy", "Children's Literature"],
     "options": [

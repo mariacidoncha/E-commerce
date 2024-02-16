@@ -1,9 +1,10 @@
 import './productsSection.css';
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
 import { ProductCard } from './ProductCard';
 import { useProductContext } from '../../../context/ProductContext';
 import { useFilterContext } from '../../../context/FilterContext';
 import { FilterType } from '../../../utils/interfaces/product';
+import { getProducts } from '../../../utils';
 
 export interface IProductsSectionProps {
   max?: number;
@@ -14,6 +15,15 @@ export function ProductsSection(props: IProductsSectionProps): ReactNode {
   const filter = useFilterContext();
   const max = props.max ? props.max : products.products.length;
   const showProducts = products.products.slice(0, max);
+
+  useEffect(() => {
+    async function getProductAPI() {
+      const response = await getProducts();
+      products.setProducts(response);
+    }
+
+    getProductAPI();
+  }, []);
 
   return (
     <section className="popular-items">

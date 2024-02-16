@@ -13,7 +13,7 @@ export function AppRouter() {
           <Route element={<FilterContextProvider />}>
             <Route path="/home" element={<Home />} />
             <Route path="/products" element={<Product />} />
-            <Route path="/products/:item" element={<ProductDetail />} />
+            <Route path="/:item" element={<ProductDetail />} />
             <Route path="/cart" element={<Cart />} />
           </Route>
         </Route>

@@ -11,10 +11,7 @@ import { NavLink } from 'react-router-dom';
 export function NavBar(): ReactNode {
   return (
     <section className="nav">
-      <NavLink
-        to="/home"
-        className={({ isActive }) => (isActive ? 'active' : '')}
-      >
+      <NavLink to="/home">
         <IoHomeOutline stroke="#EEEED0" />
         <p className="description">Home</p>
       </NavLink>

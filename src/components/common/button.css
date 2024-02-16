@@ -11,10 +11,15 @@
   border-radius: 10px;
   color: #eeeed0;
   background-color: #e74800;
+  width: 100%;
 }
 
 .my-button:hover {
   background-color: #eeeed0;
   color: #e74800;
   outline: 0.2rem solid #e74800;
+}
+
+.hide {
+  display: none;
 }

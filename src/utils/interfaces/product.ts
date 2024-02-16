@@ -15,6 +15,20 @@ export enum FilterType {
   name = 'NAME',
 }
 
+export interface AddProduct {
+  price: number;
+  quantity: number;
+}
+
+export enum TypesAddProduct {
+  AddProduct = 'ADDING',
+  SubtractProduct = 'SUBTRACTING',
+}
+
+export interface ActionAddProduct {
+  type: TypesAddProduct;
+}
+
 export interface Author {
   name: string;
   description: string;
