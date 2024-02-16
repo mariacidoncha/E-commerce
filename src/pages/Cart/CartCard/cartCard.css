@@ -18,12 +18,16 @@
   color: #adb5bd;
 }
 
-.product-price {
+.primary-color {
   color: #e74800;
 }
 
 .product-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   text-align: left;
+  width: 100%;
 }
 
 .product-option {
@@ -32,4 +36,7 @@
 }
 
 .product-actions {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
