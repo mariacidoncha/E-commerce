@@ -8,7 +8,9 @@ import {
   FaVrCardboard,
 } from 'react-icons/fa';
 import { Category } from './Category';
-import { ReactElement } from 'react';
+import { ReactElement, MouseEvent } from 'react';
+import { useFilterContext } from '../../../context/FilterContext';
+import { FilterType } from '../../../utils/interfaces/product';
 
 const categories = [
   { id: 1, name: 'Fiction', icon: <FaSpaceShuttle /> },
@@ -20,20 +22,38 @@ const categories = [
 ];
 
 export function Filters(): ReactElement {
+  const filter = useFilterContext();
+
+  function remove() {
+    filter.setFilter({ type: FilterType.name, param: '' });
+  }
+
+  function handleClick(e: MouseEvent<HTMLButtonElement>): void {
+    const target = e.currentTarget as HTMLButtonElement;
+    filter.setFilter({ type: FilterType.category, param: target.id });
+  }
+
   return (
     <>
       <section className="filters-header">
         <h3>Book category</h3>
         <a href="#">
-          <span>See all</span>
+          <button onClick={remove} className="category-btn">
+            <span>Remove filters</span>
+          </button>
         </a>
       </section>
       <section className="filters-cards">
         {categories.map(({ id, name, icon }) => {
           return (
-            <Category key={id} name={name}>
-              {icon}
-            </Category>
+            <button
+              onClick={handleClick}
+              key={id}
+              id={name}
+              className="category-btn"
+            >
+              <Category name={name}>{icon}</Category>
+            </button>
           );
         })}
       </section>

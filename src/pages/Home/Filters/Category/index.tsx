@@ -8,7 +8,7 @@ export interface ICategoryProps {
 
 export function Category(props: ICategoryProps) {
   return (
-    <article>
+    <article className="filter-group">
       <span className="icon-span">{props.children}</span>
       <p>{props.name}</p>
     </article>

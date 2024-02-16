@@ -2,14 +2,16 @@ import './productsSection.css';
 import { ReactNode } from 'react';
 import { ProductCard } from './ProductCard';
 import { useProductContext } from '../../../context/ProductContext';
+import { useFilterContext } from '../../../context/FilterContext';
+import { FilterType } from '../../../utils/interfaces/product';
 
 export interface IProductsSectionProps {
   max?: number;
-  filter?: string;
 }
 
 export function ProductsSection(props: IProductsSectionProps): ReactNode {
   const products = useProductContext();
+  const filter = useFilterContext();
   const max = props.max ? props.max : products.products.length;
   const showProducts = products.products.slice(0, max);
 
@@ -17,11 +19,16 @@ export function ProductsSection(props: IProductsSectionProps): ReactNode {
     <section className="popular-items">
       {showProducts
         .filter((product) => {
-          if (!props.filter) {
+          if (!filter.filter.param) {
             return true;
           } else {
-            const name = product.name.toLowerCase();
-            return name.includes(props.filter.toLowerCase());
+            if (filter.filter.type === FilterType.name) {
+              const name = product.name.toLowerCase();
+              return name.includes(filter.filter.param.toLowerCase());
+            } else {
+              const genre = product.genre;
+              return genre.includes(filter.filter.param);
+            }
           }
         })
         .map(({ id, image, name, author, rate, options }) => {

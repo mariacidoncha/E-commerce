@@ -1,22 +1,18 @@
 import './header.css';
 import { useAuthContext } from '../../../context/AuthContext';
 import { FaSearch } from 'react-icons/fa';
-import { ChangeEvent, Dispatch, ReactElement, SetStateAction } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { ChangeEvent, ReactElement } from 'react';
+import { useFilterContext } from '../../../context/FilterContext';
+import { FilterType } from '../../../utils/interfaces/product';
 
-export interface IHeaderProps {
-  filter: string;
-  setFilter: Dispatch<SetStateAction<string>>;
-}
-
-export function Header(props: IHeaderProps): ReactElement {
+export function Header(): ReactElement {
   const userAuth = useAuthContext();
-  const [searchParams, setSearchParams] = useSearchParams();
-  const filter = searchParams.get('filter') || '';
+  const filter = useFilterContext();
+  const inputValue =
+    filter.filter.type === FilterType.name ? filter.filter.param : '';
 
   function handleFilter(e: ChangeEvent<HTMLInputElement>) {
-    setSearchParams({ filter: e.target.value });
-    props.setFilter(e.target.value);
+    filter.setFilter({ type: FilterType.name, param: e.target.value });
   }
 
   return (
@@ -25,13 +21,13 @@ export function Header(props: IHeaderProps): ReactElement {
         <img
           className="header-avatar"
           src={`https://unavatar.io/github/${
-            userAuth.user.username ? userAuth.user.username : 'default'
+            userAuth.user?.username ? userAuth.user.username : 'default'
           }`}
           alt={`${
-            userAuth.user.name ? userAuth.user.username : 'default'
+            userAuth.user?.name ? userAuth.user.username : 'default'
           } avatar`}
         />
-        <h2>Welcome, {userAuth.user.name}</h2>
+        <h2>Welcome, {userAuth.user?.name}</h2>
       </section>
       <section>
         <p className="header-search-title">Find your favorite book</p>
@@ -41,7 +37,7 @@ export function Header(props: IHeaderProps): ReactElement {
           </span>
           <input
             onChange={handleFilter}
-            value={filter}
+            value={inputValue}
             className="header-search-input"
             type="search"
             placeholder="Search"

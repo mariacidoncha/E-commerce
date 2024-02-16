@@ -2,6 +2,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { ProtectedRoute } from '../components/layouts/ProtectedRoute';
 import { Cart, Home, Login, Product, ProductDetail } from '../pages';
 import { ProductContextProvider } from '../context/ProductContext';
+import { FilterContextProvider } from '../context/FilterContext';
 
 export function AppRouter() {
   return (
@@ -9,10 +10,12 @@ export function AppRouter() {
       <Route path="/" element={<Login />} />
       <Route element={<ProtectedRoute />}>
         <Route element={<ProductContextProvider />}>
-          <Route path="/home" element={<Home />} />
-          <Route path="/products" element={<Product />} />
-          <Route path="/products/:item" element={<ProductDetail />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route element={<FilterContextProvider />}>
+            <Route path="/home" element={<Home />} />
+            <Route path="/products" element={<Product />} />
+            <Route path="/products/:item" element={<ProductDetail />} />
+            <Route path="/cart" element={<Cart />} />
+          </Route>
         </Route>
       </Route>
       {/* <Route path='*' element={<div> 404 - not found </div>}/> */}
