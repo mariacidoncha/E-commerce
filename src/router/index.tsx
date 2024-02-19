@@ -18,7 +18,6 @@ export function AppRouter() {
           </Route>
         </Route>
       </Route>
-      {/* <Route path='*' element={<div> 404 - not found </div>}/> */}
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   );

@@ -6,8 +6,8 @@
     "username": "mariacidoncha",
     "email": "johndoe@gmail.com",
     "cart": [
-      { "id": 1, "quantity": 2 },
-      { "id": 5, "quantity": 1 }
+      { "id": 1, "quantity": 2, "option": 12.99 },
+      { "id": 5, "quantity": 1, "option": 8.5 }
     ],
     "wishlist": [1, 5]
   },

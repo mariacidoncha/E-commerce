@@ -11,4 +11,10 @@ export interface User {
 export interface ProductCart {
   id: number;
   quantity: number;
+  option: number;
+}
+
+export interface UserOptions {
+  price: number;
+  quantity: number;
 }

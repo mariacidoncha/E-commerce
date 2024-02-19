@@ -38,5 +38,26 @@
 .product-actions {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
+}
+
+.actions-btns-section {
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  gap: 0.5rem;
+  background-color: #eeeed0;
+  padding: 0.5rem;
+  border-radius: 20px;
+}
+
+.btn {
+  background-color: #e74800;
+  color: #eeeed0;
+  border: none;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.5rem;
 }

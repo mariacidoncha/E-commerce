@@ -9,10 +9,11 @@ import {
   TypesAddProduct,
 } from '../../../utils/interfaces/product';
 import { useAuthContext } from '../../../context/AuthContext';
+import { UserOptions } from '../../../utils/interfaces/user';
 
 export interface ICartModalProps {
-  price: string;
   idProduct: string;
+  userOptions: UserOptions;
 }
 
 function reducer(state: AddProduct, action: ActionAddProduct): AddProduct {
@@ -37,7 +38,7 @@ function reducer(state: AddProduct, action: ActionAddProduct): AddProduct {
 
 export function CartModal(props: ICartModalProps) {
   const initialState: AddProduct = {
-    price: parseFloat(props.price.slice(0, props.price.indexOf('€'))),
+    price: props.userOptions.price,
     quantity: 1,
   };
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -53,13 +54,17 @@ export function CartModal(props: ICartModalProps) {
 
   function handleClickAddProduct() {
     const added = user.user?.cart.find((e) => {
-      return e.id.toString() === props.idProduct;
+      return (
+        e.id.toString() === props.idProduct &&
+        e.option === props.userOptions.price
+      );
     });
 
     if (!added) {
       user.user?.cart.push({
         id: parseInt(props.idProduct),
         quantity: state.quantity,
+        option: props.userOptions.price,
       });
       toast.success('Successfully added!', {
         icon: '👏',
@@ -82,7 +87,7 @@ export function CartModal(props: ICartModalProps) {
     <section className="modal-section">
       <section className="price-section">
         <Toaster />
-        <p className="price">{state.price} €</p>
+        <p className="price">{props.userOptions.price} €</p>
         <section className="quantity-section">
           <Button handle={handleClickSubtract} icon size="2rem">
             -

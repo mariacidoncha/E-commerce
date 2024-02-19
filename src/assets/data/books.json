@@ -2,7 +2,7 @@
   {
     "id": "1",
     "name": "The Great Gatsby",
-    "image": "src/assets/covers/The_Great_Gatsby.webp",
+    "image": "./src/assets/covers/The_Great_Gatsby.webp",
     "year": "1925",
     "author": {
       "name": "F. Scott Fitzgerald",
