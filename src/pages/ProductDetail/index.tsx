@@ -6,19 +6,15 @@ import { CartModal } from '../../components/layouts/CartModal';
 import { Product } from '../../utils/interfaces/product';
 import { FaStar } from 'react-icons/fa';
 import { BsArrowLeftCircle, BsCheck2Circle } from 'react-icons/bs';
-import { ChangeEvent, useEffect, useMemo, useState } from 'react';
+import { ChangeEvent, useMemo, useState } from 'react';
 
 export function ProductDetail() {
   const products = useProductContext();
   const navigate = useNavigate();
   const { item } = useParams();
   const showProduct = products.products.find((p) => p.id === item) as Product;
-  useEffect(() => {
-    console.log(showProduct, item);
-  }, [item]);
-  // const [option, setOption] = useState(0);
   const [price, setPrice] = useState(showProduct.options[0].price);
-  // const [price, setPrice] = useState(`${showProduct.options[0].price} €`);
+  const userOptions = useMemo(() => ({ price, quantity: 1 }), [price]);
   const rate = Math.floor(showProduct!.rate);
   const stars = Array.from({ length: rate }, (_e, i) => (
     <FaStar fill="#F7BC13" key={i} />
@@ -35,8 +31,6 @@ export function ProductDetail() {
     navigate('/home');
   }
 
-  const userOptions = useMemo(() => ({ price, quantity: 1 }), [price]);
-
   return (
     <>
       <section className="book-detail-section">
@@ -51,7 +45,6 @@ export function ProductDetail() {
         <span className="book-rating">
           {stars.map((s) => s)} <span> ({showProduct.rate})</span>
         </span>
-        {/* <p className="book-price">{showProduct.options[option].price}</p> */}
         <p className="book-price">{price} €</p>
         <section className="btn-section">
           {showProduct.options.map((option, i) => {
@@ -95,10 +88,6 @@ export function ProductDetail() {
         />
         <p className="book-synopsis">{showProduct.author.description}</p>
       </section>
-      {/* <CartModal
-        price={showProduct.options[option].price.toString()}
-        idProduct={showProduct.id}
-      /> */}
       <CartModal userOptions={userOptions} idProduct={showProduct.id} />
       <NavBar />
     </>

@@ -6,9 +6,7 @@ import { CartCard } from './CartCard';
 import { Product } from '../../utils/interfaces/product';
 import { IoCartOutline } from 'react-icons/io5';
 
-export interface ICartProps {}
-
-export function Cart(props: ICartProps) {
+export function Cart() {
   const user = useAuthContext();
   const products = useProductContext();
   return (

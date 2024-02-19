@@ -1,8 +1,13 @@
 import './cartCard.css';
-import { Product } from '../../../utils/interfaces/product';
+import {
+  ActionAddProduct,
+  Product,
+  TypesAddProduct,
+} from '../../../utils/interfaces/product';
 import { IoHeartOutline, IoTrashOutline } from 'react-icons/io5';
 import { ProductCart } from '../../../utils/interfaces/user';
 import { useAuthContext } from '../../../context/AuthContext';
+import { useReducer } from 'react';
 
 export interface ICartCardProps {
   product: Product;
@@ -14,19 +19,43 @@ export function CartCard(props: ICartCardProps) {
   const coverOption = props.product.options.find((o) => {
     return o.price === props.userOptions.option;
   })?.cover;
+  const [state, dispatch] = useReducer(reducer, props.userOptions);
+
+  function reducer(state: ProductCart, action: ActionAddProduct): ProductCart {
+    const product = user.user?.cart.find(
+      (p) => p.id === state.id
+    ) as ProductCart;
+    switch (action.type) {
+      case TypesAddProduct.AddProduct: {
+        const newState = {
+          ...state,
+          quantity: state.quantity + 1,
+        };
+        product.quantity = newState.quantity;
+        return newState;
+      }
+
+      case TypesAddProduct.SubtractProduct: {
+        const newState = {
+          ...state,
+          quantity: state.quantity - 1,
+        };
+        product.quantity = newState.quantity;
+        return newState;
+      }
+
+      default: {
+        return state;
+      }
+    }
+  }
 
   function handleClickSubtract() {
-    //TODO: eliminar un item del carrito si llega a 0
-    const changeItem = user.user?.cart.find((e) => {
-      return e.id.toString() === props.product.id;
-    })!;
-    console.log('🚀 ~ changeItem ~ changeItem:', changeItem);
+    dispatch({ type: TypesAddProduct.SubtractProduct });
+  }
 
-    // if (changeItem?.quantity === 1) {
-    //   user.user?.cart = user.user?.cart.filter((e) => e !== changeItem);
-    // } else {
-    //   changeItem.quantity = changeItem.quantity - 1;
-    // }
+  function handleClickAdd() {
+    dispatch({ type: TypesAddProduct.AddProduct });
   }
 
   return (
@@ -46,8 +75,10 @@ export function CartCard(props: ICartCardProps) {
             <button onClick={handleClickSubtract} className="btn">
               -
             </button>
-            {props.userOptions.quantity}
-            <button className="btn">+</button>
+            {state.quantity}
+            <button onClick={handleClickAdd} className="btn">
+              +
+            </button>
           </span>
         </section>
       </section>
