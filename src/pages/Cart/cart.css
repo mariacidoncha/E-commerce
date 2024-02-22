@@ -16,7 +16,7 @@
   align-items: center;
   gap: 1rem;
   padding: 0 2rem;
-  padding-bottom: 6rem;
+  padding-bottom: 10rem;
 }
 
 .cart-icon {
@@ -49,6 +49,7 @@
 .cart-resume li {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 0.5rem;
 }
 
 .total-li {
@@ -57,4 +58,10 @@
 
 .cart-resume li p:first-child {
   color: #adb5bd;
+}
+
+.back {
+  position: absolute;
+  left: 3%;
+  top: 2.5%;
 }

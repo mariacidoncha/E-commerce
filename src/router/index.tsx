@@ -4,6 +4,7 @@ import { Cart, Home, Login, Product, ProductDetail } from '../pages';
 import { ProductContextProvider } from '../context/ProductContext';
 import { FilterContextProvider } from '../context/FilterContext';
 import { Profile } from '../pages/Profile';
+import { Checkout } from '../pages/Checkout';
 
 export function AppRouter() {
   return (
@@ -17,6 +18,7 @@ export function AppRouter() {
             <Route path="/:item" element={<ProductDetail />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/checkout" element={<Checkout />} />
           </Route>
         </Route>
       </Route>

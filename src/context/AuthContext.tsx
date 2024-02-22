@@ -1,13 +1,6 @@
-import {
-  ReactNode,
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-} from 'react';
+import { ReactNode, createContext, useContext, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { User } from '../utils/interfaces/user';
-import { getUsers } from '../utils';
 
 interface IAuthContextProps {
   children?: ReactNode;
@@ -15,7 +8,7 @@ interface IAuthContextProps {
 
 interface AuthContextType {
   user: User | null;
-  setUser: any;
+  setUser: Function;
 }
 
 const AuthContext = createContext({} as AuthContextType);

@@ -5,10 +5,16 @@ import { useProductContext } from '../../context/ProductContext';
 import { CartCard } from './CartCard';
 import { Product } from '../../utils/interfaces/product';
 import { IoCartOutline, IoSadOutline } from 'react-icons/io5';
+import { useEffect, useState } from 'react';
+import { Button } from '../../components/common/button';
+import { useNavigate } from 'react-router-dom';
+import { BsArrowLeftCircle } from 'react-icons/bs';
 
 export function Cart() {
   const user = useAuthContext();
   const products = useProductContext();
+  const [totalCostValue, setTotalCostValue] = useState('');
+  const navigate = useNavigate();
 
   function totalCost() {
     let total = 0;
@@ -16,11 +22,24 @@ export function Cart() {
       total += el.option * el.quantity;
     });
 
-    return total.toFixed(2);
+    setTotalCostValue(total.toFixed(2));
+  }
+
+  useEffect(() => {
+    totalCost();
+  }, []);
+
+  function handleClick() {
+    navigate(-1);
+  }
+
+  function handleCLickCheckOut() {
+    navigate('/checkout');
   }
 
   return (
     <>
+      <BsArrowLeftCircle onClick={handleClick} className="back" />
       <section className="title-section">
         <IoCartOutline className="icon" />
         <h2>Cart</h2>
@@ -41,6 +60,7 @@ export function Cart() {
               key={`${cartProduct?.id}p${userProduct.option}`}
               product={cartProduct}
               userOptions={userProduct}
+              render={totalCost}
             />
           );
         })}
@@ -52,7 +72,7 @@ export function Cart() {
               return e.id === el.id.toString();
             })?.name;
             return (
-              <li key={el.id}>
+              <li key={`${el.id}p${el.option}`}>
                 <p>{name}:</p> <p>{el.option * el.quantity} €</p>
               </li>
             );
@@ -60,8 +80,9 @@ export function Cart() {
         </ul>
         <hr />
         <li className="total-li">
-          <p>TOTAL:</p> <p>{totalCost()} €</p>
+          <p>TOTAL:</p> <p>{totalCostValue} €</p>
         </li>
+        <Button handle={handleCLickCheckOut}>Check out</Button>
       </section>
       <NavBar />
     </>

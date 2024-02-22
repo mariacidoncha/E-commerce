@@ -12,6 +12,7 @@ import { useReducer } from 'react';
 export interface ICartCardProps {
   product: Product;
   userOptions: ProductCart;
+  render: Function;
 }
 
 export function CartCard(props: ICartCardProps) {
@@ -32,6 +33,7 @@ export function CartCard(props: ICartCardProps) {
           quantity: state.quantity + 1,
         };
         product.quantity = newState.quantity;
+        props.render();
         return newState;
       }
 
@@ -41,6 +43,7 @@ export function CartCard(props: ICartCardProps) {
           quantity: state.quantity - 1,
         };
         product.quantity = newState.quantity;
+        props.render();
         return newState;
       }
 
