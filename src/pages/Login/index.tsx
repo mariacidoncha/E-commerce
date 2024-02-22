@@ -7,6 +7,7 @@ import { Button } from '../../components/common/button';
 import { useAuthContext } from '../../context/AuthContext';
 import { getUsers, resetForm, setErrorInput } from '../../utils';
 import { User } from '../../utils/interfaces/user';
+import { useAuthDispatch } from '../../context/AuthStateContext';
 
 const initialState: Form = {
   username: '',
@@ -43,6 +44,7 @@ export function Login() {
   const [passwordError, setPasswordError] = useState('');
   const userAuth = useAuthContext();
   const navigate = useNavigate();
+  const dispatchPau = useAuthDispatch();
 
   useEffect(() => {
     async function setUsersAPI() {
@@ -68,7 +70,10 @@ export function Login() {
       setPasswordError('Incorrect password');
     } else {
       dispatch({ type: Types.Reset });
+      localStorage.setItem('user', JSON.stringify(userFound));
+      // localStorage.setItem('user', userFound.id.toString());
       userAuth.setUser(userFound);
+      dispatchPau({ type: 'LOGIN' });
       navigate('/home');
     }
   }

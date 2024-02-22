@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
-import { useAuthContext } from '../../context/AuthContext';
+import { useAuthState } from '../../context/AuthStateContext';
 
 export interface IProtectedRouteProps {
   children?: ReactNode;
@@ -9,9 +9,9 @@ export interface IProtectedRouteProps {
 
 export function ProtectedRoute(props: IProtectedRouteProps) {
   const to = props.redirectTo ? props.redirectTo : '/';
-  const user = useAuthContext();
+  const user = localStorage.getItem('user');
 
-  if (!user.user) {
+  if (!user) {
     return <Navigate to={to} />;
   }
 

@@ -6,7 +6,7 @@ import { ProductsSection } from '../../components/layouts/ProductsSection';
 export function Product(): ReactNode {
   return (
     <>
-      <Header />
+      <Header search />
       <h2>Books section</h2>
       <ProductsSection />
       <NavBar />

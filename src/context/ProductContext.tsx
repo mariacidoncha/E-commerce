@@ -1,4 +1,11 @@
-import { ReactNode, createContext, useContext, useState } from 'react';
+import {
+  Dispatch,
+  ReactNode,
+  SetStateAction,
+  createContext,
+  useContext,
+  useState,
+} from 'react';
 import { Outlet } from 'react-router-dom';
 import { Product } from '../utils/interfaces/product';
 
@@ -8,7 +15,7 @@ interface IProductContextProps {
 
 interface ProductContextType {
   products: Product[];
-  setProducts: any;
+  setProducts: Dispatch<SetStateAction<Product[]>>;
 }
 
 const ProductContext = createContext({} as ProductContextType);

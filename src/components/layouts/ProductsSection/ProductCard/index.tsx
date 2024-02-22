@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { FaRegHeart, FaPlus, FaStar } from 'react-icons/fa';
 import { Button } from '../../../common/button';
 import { ReactNode } from 'react';
+import { useAuthContext } from '../../../../context/AuthContext';
+import toast, { Toaster } from 'react-hot-toast';
 
 export interface IProductCardProps {
   id: string;
@@ -14,24 +16,54 @@ export interface IProductCardProps {
 }
 
 export function ProductCard(props: IProductCardProps): ReactNode {
+  const user = useAuthContext();
   const rate = Math.floor(props.rating);
   const stars = Array.from({ length: rate }, (_e, i) => (
     <FaStar fill="#F7BC13" key={i} />
   ));
 
+  function handleClickAdd() {
+    const added = user.user?.cart.find((e) => {
+      return e.id.toString() === props.id && e.option === props.price;
+    });
+
+    if (!added) {
+      user.user?.cart.push({
+        id: parseInt(props.id),
+        quantity: 1,
+        option: props.price,
+      });
+      toast.success('Successfully added!', {
+        icon: '👏',
+        style: {
+          fontSize: '1.5rem',
+        },
+      });
+    } else {
+      toast.success('Successfully added!', {
+        icon: '👏',
+        style: {
+          fontSize: '1.5rem',
+        },
+      });
+      added.quantity = added.quantity + 1;
+    }
+  }
+
   return (
-    <Link to={`/${props.id}`}>
-      <article className="card">
+    <article className="card">
+      <section className="card-icons">
+        <FaRegHeart fill="#E74800" />
+        <FaPlus onClick={handleClickAdd} />
+      </section>
+      <Link to={`/${props.id}`}>
+        <Toaster />
         <section className="card-header">
           <img
             className="card-img"
             src={props.image}
             alt={`${props.name} image`}
           />
-          <section className="card-icons">
-            <FaRegHeart fill="#E74800" />
-            <FaPlus />
-          </section>
         </section>
         <section className="card-info">
           <h3>{props.name}</h3>
@@ -46,7 +78,7 @@ export function ProductCard(props: IProductCardProps): ReactNode {
           </section>
         </section>
         <Button size={'1rem'}>More info</Button>
-      </article>
-    </Link>
+      </Link>
+    </article>
   );
 }

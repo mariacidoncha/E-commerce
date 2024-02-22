@@ -8,7 +8,7 @@ import { ProductsSection } from '../../components/layouts/ProductsSection';
 export function Home() {
   return (
     <>
-      <Header />
+      <Header search />
       <Filters />
       <section className="popular-header">
         <h3>Most popular</h3>

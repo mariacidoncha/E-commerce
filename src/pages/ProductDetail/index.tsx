@@ -24,11 +24,10 @@ export function ProductDetail() {
     setPrice(
       parseFloat(e.target.nextSibling?.lastChild?.textContent as string)
     );
-    // setOption(e.itemID);
   }
 
   function handleClick() {
-    navigate('/home');
+    navigate(-1);
   }
 
   return (

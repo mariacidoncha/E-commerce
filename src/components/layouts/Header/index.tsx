@@ -4,12 +4,18 @@ import { FaSearch } from 'react-icons/fa';
 import { ChangeEvent, ReactElement } from 'react';
 import { useFilterContext } from '../../../context/FilterContext';
 import { FilterType } from '../../../utils/interfaces/product';
+import { Link } from 'react-router-dom';
 
-export function Header(): ReactElement {
+interface IHeaderProps {
+  search?: boolean;
+}
+
+export function Header(props: IHeaderProps): ReactElement {
   const userAuth = useAuthContext();
   const filter = useFilterContext();
   const inputValue =
     filter.filter.type === FilterType.name ? filter.filter.param : '';
+  const searchBarClass = props.search ? '' : 'hide';
 
   function handleFilter(e: ChangeEvent<HTMLInputElement>) {
     filter.setFilter({ type: FilterType.name, param: e.target.value });
@@ -17,7 +23,7 @@ export function Header(): ReactElement {
 
   return (
     <section className="home-header">
-      <section className="home-header-user">
+      <Link to="/profile" className="home-header-user">
         <img
           className="header-avatar"
           src={`https://unavatar.io/github/${
@@ -28,8 +34,8 @@ export function Header(): ReactElement {
           } avatar`}
         />
         <h2>Welcome, {userAuth.user?.name}</h2>
-      </section>
-      <section>
+      </Link>
+      <section className={searchBarClass}>
         <p className="header-search-title">Find your favorite book</p>
         <div className="header-search-group">
           <span className="header-search-icon">
