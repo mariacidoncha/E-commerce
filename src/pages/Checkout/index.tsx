@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { NavBar } from '../../components/layouts/NavBar';
 import { useAuthContext } from '../../context/AuthContext';
 import { useProductContext } from '../../context/ProductContext';
-import { useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 
 export interface ICheckoutProps {}
 
@@ -13,15 +13,31 @@ export function Checkout() {
   const navigate = useNavigate();
   const user = useAuthContext();
   const products = useProductContext();
-  const productsPrice = user.user?.cart.reduce(
-    (total, value) => total + value.option * value.quantity,
-    0
-  );
+  const productsPrice =
+    user.user?.cart.reduce(
+      (total, value) => total + value.option * value.quantity,
+      0
+    ) ?? 0;
   const [discount, setDiscount] = useState(0);
   const [shipping, setShipping] = useState(10.5);
+  const [total, setTotal] = useState(0);
+
+  function totalCost() {
+    let total = productsPrice - discount + shipping;
+
+    setTotal(parseFloat(total.toFixed(2)));
+  }
+
+  useEffect(() => {
+    totalCost();
+  }, [shipping]);
 
   function handleClick() {
     navigate(-1);
+  }
+
+  function handleChange(e: ChangeEvent<HTMLInputElement>) {
+    setShipping(parseFloat(e.target.id));
   }
 
   return (
@@ -57,19 +73,35 @@ export function Checkout() {
           <ul>
             <li>
               <label>
-                <input name="shipping" type="radio" />
+                <input
+                  id="10.5"
+                  onChange={handleChange}
+                  name="shipping"
+                  type="radio"
+                  defaultChecked
+                />
                 Fast delivery
               </label>
             </li>
             <li>
               <label>
-                <input name="shipping" type="radio" />
+                <input
+                  id="2.3"
+                  onChange={handleChange}
+                  name="shipping"
+                  type="radio"
+                />
                 Normal delivery
               </label>
             </li>
             <li>
               <label>
-                <input name="shipping" type="radio" />
+                <input
+                  id="0"
+                  onChange={handleChange}
+                  name="shipping"
+                  type="radio"
+                />
                 Pick up delivery
               </label>
             </li>
@@ -93,7 +125,7 @@ export function Checkout() {
         </ul>
         <hr />
         <li className="total-li">
-          <p>TOTAL:</p> <p>{98} €</p>
+          <p>TOTAL:</p> <p>{total.toFixed(2)} €</p>
         </li>
       </section>
       <NavBar />

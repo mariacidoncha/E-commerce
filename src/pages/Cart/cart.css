@@ -61,6 +61,8 @@
 }
 
 .back {
+  font-size: 2rem;
+  color: #e74800;
   position: absolute;
   left: 3%;
   top: 2.5%;
