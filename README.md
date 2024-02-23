@@ -1,4 +1,11 @@
-# Welcome to Bookpedia: A React-Powered E-Commerce Project
+# Welcome to Bookpedia: A React-Powered E-Commerce Project <!-- omit in toc -->
+
+## Table of contents <!-- omit in toc -->
+
+- [💡 About the project](#-about-the-project)
+- [⚙️ Technologies used](#️-technologies-used)
+- [📓 Daily records](#-daily-records)
+- [⚠️ Struggles](#️-struggles)
 
 ## 💡 About the project
 
