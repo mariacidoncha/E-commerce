@@ -33,7 +33,7 @@ input::placeholder {
   color: #162b5a;
 }
 
-small {
+.group small {
   position: absolute;
   bottom: -45%;
   font-size: 1rem;
