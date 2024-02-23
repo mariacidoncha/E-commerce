@@ -8,6 +8,7 @@ import { useProductContext } from '../../context/ProductContext';
 import { ChangeEvent, useEffect, useState } from 'react';
 import { discounts } from '../../assets/data/discounts';
 import toast, { Toaster } from 'react-hot-toast';
+import { Button } from '../../components/common/button';
 
 export interface ICheckoutProps {}
 
@@ -45,12 +46,11 @@ export function Checkout() {
     setShipping(parseFloat(e.target.id));
   }
 
-  function handleChangeCard(e: ChangeEvent<HTMLInputElement>) {
-    if (e.target.checked) {
-      setPaymentClass('add-card');
-    } else {
-      setPaymentClass('add-card hide');
-    }
+  function handleChangeMasterCard() {
+    setPaymentClass('add-card');
+  }
+  function handleChangePayPal() {
+    setPaymentClass('add-card hide');
   }
 
   function handleClickCoupon() {
@@ -62,7 +62,7 @@ export function Checkout() {
       setDiscount(
         -parseFloat((productsPrice * discountFound.value).toFixed(2))
       );
-      toast.success('Successfully toasted!', {
+      toast.success('Successfully added!', {
         style: {
           fontSize: '1.5rem',
         },
@@ -165,8 +165,9 @@ export function Checkout() {
             <label className="card-section-label">
               <input
                 className="add-card-input"
-                onChange={handleChangeCard}
-                type="checkbox"
+                onChange={handleChangeMasterCard}
+                type="radio"
+                name="pay"
               />
               <img src="public/mastercard-svgrepo-com.svg" alt="" />
               Add MasterCard
@@ -186,7 +187,12 @@ export function Checkout() {
               </label>
             </section>
             <label className="card-section-label">
-              <input className="add-card-input" type="checkbox" />
+              <input
+                onChange={handleChangePayPal}
+                className="add-card-input"
+                type="radio"
+                name="pay"
+              />
               <img src="public/paypal-svgrepo-com.svg" alt="" />
               PayPal
             </label>
@@ -222,6 +228,7 @@ export function Checkout() {
         <li className="total-li">
           <p>TOTAL:</p> <p>{total.toFixed(2)} €</p>
         </li>
+        <Button>Buy now</Button>
       </section>
       <NavBar />
     </>

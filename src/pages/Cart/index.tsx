@@ -42,7 +42,7 @@ export function Cart() {
       <BsArrowLeftCircle onClick={handleClick} className="back" />
       <section className="title-section">
         <IoCartOutline className="icon" />
-        <h2>Cart</h2>
+        <h2>Shopping cart</h2>
       </section>
       <section className="products-section">
         {user.user?.cart.length === 0 && (

@@ -8,6 +8,7 @@ import { IoHeartOutline, IoTrashOutline } from 'react-icons/io5';
 import { ProductCart } from '../../../utils/interfaces/user';
 import { useAuthContext } from '../../../context/AuthContext';
 import { useReducer } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 
 export interface ICartCardProps {
   product: Product;
@@ -40,7 +41,7 @@ export function CartCard(props: ICartCardProps) {
       case TypesAddProduct.SubtractProduct: {
         const newState = {
           ...state,
-          quantity: state.quantity - 1,
+          quantity: state.quantity === 1 ? 1 : state.quantity - 1,
         };
         product.quantity = newState.quantity;
         props.render();
@@ -61,8 +62,25 @@ export function CartCard(props: ICartCardProps) {
     dispatch({ type: TypesAddProduct.AddProduct });
   }
 
+  function handleClickRemove() {
+    const indexDelete = user.user?.cart.indexOf(props.userOptions)!;
+    if (indexDelete === 0) {
+      user.user?.cart.shift();
+    } else {
+      user.user?.cart.splice(indexDelete, indexDelete);
+    }
+    toast('Remove successfully!', {
+      icon: '🗑️',
+      style: {
+        fontSize: '1.5rem',
+      },
+    });
+    props.render();
+  }
+
   return (
     <article className="cart-card">
+      <Toaster />
       <img src={props.product.image} alt={`${props.product.name} image`} />
       <section className="product-info">
         <p className="product-name">{props.product.name}</p>
@@ -73,7 +91,10 @@ export function CartCard(props: ICartCardProps) {
         </section>
         <section className="product-actions">
           <IoHeartOutline className="icon" />
-          <IoTrashOutline className="icon primary-color" />
+          <IoTrashOutline
+            onClick={handleClickRemove}
+            className="icon primary-color"
+          />
           <span className="actions-btns-section">
             <button onClick={handleClickSubtract} className="btn">
               -
