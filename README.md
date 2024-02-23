@@ -1,30 +1,21 @@
-# React + TypeScript + Vite
+# Welcome to Bookpedia: A React-Powered E-Commerce Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 💡 About the project
 
-Currently, two official plugins are available:
+Welcome to Bookpedia, an e-commerce platform developed as a part of a master's degree project. This project is a demonstration of advanced coding skills, with a primary focus on utilizing the React library to create an immersive and efficient user experience for book enthusiasts.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Bookpedia leverages React's capabilities to elevate user interaction. The project incorporates real-time updates, ensuring that users experience a dynamic interface that responds to their actions instantly. The integration of React Router enables seamless navigation, creating a single-page application that enhances the overall user journey.
 
-## Expanding the ESLint configuration
+<img src="public/195shots_so.png" alt="mockup of bookpedia" height="100px"/>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## ⚙️ Technologies used
 
-- Configure the top-level `parserOptions` property like this:
+- `React`: A declarative and efficient JavaScript library for building user interfaces.
+- `React Router`: A standard library for routing in React applications.
+- `react-hot-toast`: A React library that provides a lightweight and customizable solution for displaying toast notifications in a web application.
+- `react-icons`: A React library that offers a diverse collection of icons.
+- `unavatar.io`: a versatile API service that simplifies the process of retrieving a user's avatar by providing a single endpoint to fetch profile pictures from various social platforms
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## 📓 Daily records
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## ⚠️ Struggles
