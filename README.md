@@ -115,6 +115,7 @@ Bookpedia leverages React's capabilities to elevate user interaction. The projec
 - Wishlist page style
 - Wishlist carts rendered
 - Heart style depends if the product is added to the wishlist or not
+- Add "add/remove" to wishlist feature
 
 ## ⚠️ Struggles
 

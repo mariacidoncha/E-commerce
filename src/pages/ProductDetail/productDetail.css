@@ -154,3 +154,10 @@
 .similar-products .swiper-pagination-bullet-active {
   background: #162b5a;
 }
+
+.recommended-item-header {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5rem;
+}

@@ -1,6 +1,5 @@
 import './filters.css';
 import {
-  FaHeart,
   FaMapMarkedAlt,
   FaRedditAlien,
   FaSpaceShuttle,
@@ -11,12 +10,13 @@ import { Category } from './Category';
 import { ReactElement, MouseEvent } from 'react';
 import { useFilterContext } from '../../../context/FilterContext';
 import { FilterType } from '../../../utils/interfaces/product';
+import { IoHeart } from 'react-icons/io5';
 
 const categories = [
   { id: 1, name: 'Fiction', icon: <FaSpaceShuttle /> },
   { id: 2, name: 'Science fiction', icon: <FaRedditAlien /> },
   { id: 3, name: 'Drama', icon: <FaTheaterMasks /> },
-  { id: 4, name: 'Romance', icon: <FaHeart /> },
+  { id: 4, name: 'Romance', icon: <IoHeart /> },
   { id: 5, name: 'Classic', icon: <FaVrCardboard /> },
   { id: 6, name: 'Adventure', icon: <FaMapMarkedAlt /> },
 ];

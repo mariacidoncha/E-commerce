@@ -12,8 +12,11 @@ import { Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import { useAuthContext } from '../../context/AuthContext';
+import { IoHeart } from 'react-icons/io5';
 
 export function ProductDetail() {
+  const user = useAuthContext();
   const products = useProductContext();
   const navigate = useNavigate();
   const { item } = useParams();
@@ -31,7 +34,6 @@ export function ProductDetail() {
     similarProducts.length === 0
       ? products.products.slice(0, 3)
       : similarProducts;
-  console.log('🚀 ~ similarProducts ~ similarProducts:', showSimilarProducts);
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
     setPrice(
@@ -113,10 +115,16 @@ export function ProductDetail() {
           modules={[Pagination, Navigation]}
         >
           {showSimilarProducts.map((p) => {
+            const wished = user.user?.wishlist.find(
+              (w) => w.toString() === p.id
+            );
             return (
               <SwiperSlide key={p.id}>
                 <Link to={`/${p.id}`}>
-                  <img src={p.image} alt={`${p.name} image`} />
+                  <section className="recommended-item-header">
+                    <img src={p.image} alt={`${p.name} image`} />
+                    {wished && <IoHeart fill="#E74800" className="icon" />}
+                  </section>
                   <p>{p.name}</p>
                   <p>{p.author.name}</p>
                 </Link>

@@ -5,7 +5,7 @@ import { useProductContext } from '../../context/ProductContext';
 import { WishListCard } from './WishListCard';
 import { BsArrowLeftCircle } from 'react-icons/bs';
 import { Link, useNavigate } from 'react-router-dom';
-import { FaHeart } from 'react-icons/fa';
+import { IoHeart } from 'react-icons/io5';
 
 export interface IWishListProps {}
 
@@ -22,7 +22,7 @@ export function WishList(props: IWishListProps) {
     <>
       <BsArrowLeftCircle onClick={handleClick} className="back" />
       <section className="title-section">
-        <FaHeart className="icon" />
+        <IoHeart className="icon" />
         <h2>Wishlist</h2>
       </section>
       <section className="wishlist-section">

@@ -4,10 +4,10 @@ import {
   Product,
   TypesAddProduct,
 } from '../../../utils/interfaces/product';
-import { IoHeartOutline, IoTrashOutline } from 'react-icons/io5';
+import { IoHeart, IoHeartOutline, IoTrashOutline } from 'react-icons/io5';
 import { ProductCart } from '../../../utils/interfaces/user';
 import { useAuthContext } from '../../../context/AuthContext';
-import { useReducer } from 'react';
+import { useReducer, useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 
 export interface ICartCardProps {
@@ -22,6 +22,12 @@ export function CartCard(props: ICartCardProps) {
     return o.price === props.userOptions.option;
   })?.cover;
   const [state, dispatch] = useReducer(reducer, props.userOptions);
+  const wished = user.user?.wishlist.find(
+    (p) => p.toString() === props.product.id
+  )
+    ? true
+    : false;
+  const [isWished, setIsWished] = useState(wished);
 
   function reducer(state: ProductCart, action: ActionAddProduct): ProductCart {
     const product = user.user?.cart.find(
@@ -62,6 +68,39 @@ export function CartCard(props: ICartCardProps) {
     dispatch({ type: TypesAddProduct.AddProduct });
   }
 
+  function handleClickAddWish() {
+    const added = user.user?.wishlist.find((e) => {
+      return e.toString() === props.product.id;
+    });
+
+    if (!added) {
+      user.user?.wishlist.push(parseInt(props.product.id));
+      toast.success('Successfully added!', {
+        icon: '🧡',
+        style: {
+          fontSize: '1.5rem',
+        },
+      });
+      setIsWished(true);
+    } else {
+      const indexDelete = user.user?.wishlist.indexOf(
+        parseInt(props.product.id)
+      )!;
+      if (indexDelete === 0) {
+        user.user?.wishlist.shift();
+      } else {
+        user.user?.wishlist.splice(indexDelete, indexDelete);
+      }
+      toast.error('This product is not on your wishlist more!', {
+        icon: '💔',
+        style: {
+          fontSize: '1.5rem',
+        },
+      });
+      setIsWished(false);
+    }
+  }
+
   function handleClickRemove() {
     const indexDelete = user.user?.cart.indexOf(props.userOptions)!;
     if (indexDelete === 0) {
@@ -90,7 +129,16 @@ export function CartCard(props: ICartCardProps) {
           <p className="primary-color">{props.userOptions.option} €</p>
         </section>
         <section className="product-actions">
-          <IoHeartOutline className="icon" />
+          {isWished && (
+            <IoHeart
+              onClick={handleClickAddWish}
+              fill="#E74800"
+              className="icon"
+            />
+          )}
+          {!isWished && (
+            <IoHeartOutline onClick={handleClickAddWish} className="icon" />
+          )}
           <IoTrashOutline
             onClick={handleClickRemove}
             className="icon primary-color"

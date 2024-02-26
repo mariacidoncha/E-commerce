@@ -1,8 +1,7 @@
 import './cartModal.css';
 import toast, { Toaster } from 'react-hot-toast';
 import { Button } from '../../common/button';
-import { IoHeartOutline } from 'react-icons/io5';
-import { useReducer } from 'react';
+import { useReducer, useState } from 'react';
 import {
   ActionAddProduct,
   AddProduct,
@@ -10,7 +9,7 @@ import {
 } from '../../../utils/interfaces/product';
 import { useAuthContext } from '../../../context/AuthContext';
 import { UserOptions } from '../../../utils/interfaces/user';
-import { FaHeart } from 'react-icons/fa';
+import { IoHeart, IoHeartOutline } from 'react-icons/io5';
 
 export interface ICartModalProps {
   idProduct: string;
@@ -46,7 +45,10 @@ export function CartModal(props: ICartModalProps) {
   const user = useAuthContext();
   const wished = user.user?.wishlist.find(
     (p) => p.toString() === props.idProduct
-  );
+  )
+    ? true
+    : false;
+  const [isWished, setIsWished] = useState(wished);
 
   function handleClickAdd() {
     dispatch({ type: TypesAddProduct.AddProduct });
@@ -64,18 +66,28 @@ export function CartModal(props: ICartModalProps) {
     if (!added) {
       user.user?.wishlist.push(parseInt(props.idProduct));
       toast.success('Successfully added!', {
-        icon: '👏',
+        icon: '🧡',
         style: {
           fontSize: '1.5rem',
         },
       });
+      setIsWished(true);
     } else {
-      toast.error('This product is on your wishlist yet!', {
-        icon: '👏',
+      const indexDelete = user.user?.wishlist.indexOf(
+        parseInt(props.idProduct)
+      )!;
+      if (indexDelete === 0) {
+        user.user?.wishlist.shift();
+      } else {
+        user.user?.wishlist.splice(indexDelete, indexDelete);
+      }
+      toast.error('This product is not on your wishlist more!', {
+        icon: '💔',
         style: {
           fontSize: '1.5rem',
         },
       });
+      setIsWished(false);
     }
   }
 
@@ -127,8 +139,8 @@ export function CartModal(props: ICartModalProps) {
       </section>
       <section className="btns-section">
         <button onClick={handleClickAddWish} className="wish-btn">
-          {wished && <FaHeart fill="#EEEED0" />}
-          {!wished && <IoHeartOutline stroke="#EEEED0" />}
+          {isWished && <IoHeart fill="#EEEED0" />}
+          {!isWished && <IoHeartOutline stroke="#EEEED0" />}
         </button>
         <Button handle={handleClickAddProduct} size="2rem">
           Add to cart

@@ -1,10 +1,11 @@
 import './productCard.css';
 import { Link } from 'react-router-dom';
-import { FaRegHeart, FaPlus, FaStar, FaHeart } from 'react-icons/fa';
+import { FaPlus, FaStar } from 'react-icons/fa';
 import { Button } from '../../../common/button';
-import { ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
 import { useAuthContext } from '../../../../context/AuthContext';
 import toast, { Toaster } from 'react-hot-toast';
+import { IoHeart, IoHeartOutline } from 'react-icons/io5';
 
 export interface IProductCardProps {
   id: string;
@@ -21,7 +22,41 @@ export function ProductCard(props: IProductCardProps): ReactNode {
   const stars = Array.from({ length: rate }, (_e, i) => (
     <FaStar fill="#F7BC13" key={i} />
   ));
-  const wished = user.user?.wishlist.find((p) => p.toString() === props.id);
+  const wished = user.user?.wishlist.find((p) => p.toString() === props.id)
+    ? true
+    : false;
+  const [isWished, setIsWished] = useState(wished);
+
+  function handleClickAddWish() {
+    const added = user.user?.wishlist.find((e) => {
+      return e.toString() === props.id;
+    });
+
+    if (!added) {
+      user.user?.wishlist.push(parseInt(props.id));
+      toast.success('Successfully added!', {
+        icon: '🧡',
+        style: {
+          fontSize: '1.5rem',
+        },
+      });
+      setIsWished(true);
+    } else {
+      const indexDelete = user.user?.wishlist.indexOf(parseInt(props.id))!;
+      if (indexDelete === 0) {
+        user.user?.wishlist.shift();
+      } else {
+        user.user?.wishlist.splice(indexDelete, indexDelete);
+      }
+      toast.error('This product is not on your wishlist more!', {
+        icon: '💔',
+        style: {
+          fontSize: '1.5rem',
+        },
+      });
+      setIsWished(false);
+    }
+  }
 
   function handleClickAdd() {
     const added = user.user?.cart.find((e) => {
@@ -54,8 +89,10 @@ export function ProductCard(props: IProductCardProps): ReactNode {
   return (
     <article className="card">
       <section className="card-icons">
-        {wished && <FaHeart fill="#E74800" />}
-        {!wished && <FaRegHeart fill="#E74800" />}
+        {isWished && <IoHeart onClick={handleClickAddWish} fill="#E74800" />}
+        {!isWished && (
+          <IoHeartOutline onClick={handleClickAddWish} stroke="#E74800" />
+        )}
 
         <FaPlus className="pointer" onClick={handleClickAdd} />
       </section>
