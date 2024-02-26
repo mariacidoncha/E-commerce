@@ -25,4 +25,47 @@ Bookpedia leverages React's capabilities to elevate user interaction. The projec
 
 ## 📓 Daily records
 
+##### Day 1: 06/02/24 <!-- omit in toc -->
+
+Figma - Login and Home
+
+##### Day 2: 07/02/24 <!-- omit in toc -->
+
+Figma - Product details and Cart
+Click up
+
+##### Day 3: 08/02/24 <!-- omit in toc -->
+
+Login layout
+Login style
+Create routes
+Create private routes
+Create Auth User Context
+Add form validation on Login page
+
+##### Day 4: 09/02/24 <!-- omit in toc -->
+
+##### Day 5: 12/02/24 <!-- omit in toc -->
+
+##### Day 6: 13/02/24 <!-- omit in toc -->
+
+##### Day 7: 14/02/24 <!-- omit in toc -->
+
+##### Day 8: 15/02/24 <!-- omit in toc -->
+
+##### Day 9: 16/02/24 <!-- omit in toc -->
+
+##### Day 10: 19/02/24 <!-- omit in toc -->
+
+##### Day 11: 20/02/24 <!-- omit in toc -->
+
+##### Day 12: 21/02/24 <!-- omit in toc -->
+
+##### Day 13: 22/02/24 <!-- omit in toc -->
+
+##### Day 14: 23/02/24 <!-- omit in toc -->
+
+Checkout - payment section
+Delete item from cart
+
 ## ⚠️ Struggles

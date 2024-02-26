@@ -54,7 +54,7 @@ export function ProductCard(props: IProductCardProps): ReactNode {
     <article className="card">
       <section className="card-icons">
         <FaRegHeart fill="#E74800" />
-        <FaPlus onClick={handleClickAdd} />
+        <FaPlus className="pointer" onClick={handleClickAdd} />
       </section>
       <Link to={`/${props.id}`}>
         <Toaster />

@@ -65,25 +65,27 @@ export function Cart() {
           );
         })}
       </section>
-      <section className="cart-resume">
-        <ul>
-          {user.user?.cart.map((el) => {
-            const name = products.products.find((e) => {
-              return e.id === el.id.toString();
-            })?.name;
-            return (
-              <li key={`${el.id}p${el.option}`}>
-                <p>{name}:</p> <p>{el.option * el.quantity} €</p>
-              </li>
-            );
-          })}
-        </ul>
-        <hr />
-        <li className="total-li">
-          <p>TOTAL:</p> <p>{totalCostValue} €</p>
-        </li>
-        <Button handle={handleCLickCheckOut}>Check out</Button>
-      </section>
+      {user.user?.cart.length! > 0 && (
+        <section className="cart-resume">
+          <ul>
+            {user.user?.cart.map((el) => {
+              const name = products.products.find((e) => {
+                return e.id === el.id.toString();
+              })?.name;
+              return (
+                <li key={`${el.id}p${el.option}`}>
+                  <p>{name}:</p> <p>{el.option * el.quantity} €</p>
+                </li>
+              );
+            })}
+          </ul>
+          <hr />
+          <li className="total-li">
+            <p>TOTAL:</p> <p>{totalCostValue} €</p>
+          </li>
+          <Button handle={handleCLickCheckOut}>Check out</Button>
+        </section>
+      )}
       <NavBar />
     </>
   );

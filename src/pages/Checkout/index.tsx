@@ -9,6 +9,7 @@ import { ChangeEvent, useEffect, useState } from 'react';
 import { discounts } from '../../assets/data/discounts';
 import toast, { Toaster } from 'react-hot-toast';
 import { Button } from '../../components/common/button';
+import { Modal } from '../../components/common/modal';
 
 export interface ICheckoutProps {}
 
@@ -27,6 +28,7 @@ export function Checkout() {
   const [total, setTotal] = useState(0);
   const [paymentClass, setPaymentClass] = useState('add-card hide');
   const [errorClass, setErrorClass] = useState('hide');
+  const [isOpen, setIsOpen] = useState(false);
 
   function totalCost() {
     let total = productsPrice + discount + shipping;
@@ -82,9 +84,22 @@ export function Checkout() {
     setDiscountInput(e.target.value);
   }
 
+  function closeModal() {
+    setIsOpen(false);
+    const length = user.user?.cart.length ?? 0;
+    for (let i = 0; i < length; i++) {
+      user.user?.cart.pop();
+    }
+    navigate('/home');
+  }
+
   return (
     <>
       <Toaster />
+      <Modal onClose={closeModal} open={isOpen}>
+        <h2>🎉 Thank you for your order!</h2>
+        <h3>We hope you enjoyed reading!</h3>
+      </Modal>
       <BsArrowLeftCircle onClick={handleClick} className="back" />
       <section className="title-section">
         <IoCartOutline className="icon" />
@@ -228,7 +243,7 @@ export function Checkout() {
         <li className="total-li">
           <p>TOTAL:</p> <p>{total.toFixed(2)} €</p>
         </li>
-        <Button>Buy now</Button>
+        <Button handle={() => setIsOpen(true)}>Buy now</Button>
       </section>
       <NavBar />
     </>

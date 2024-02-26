@@ -1,5 +1,5 @@
 import './productDetail.css';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useProductContext } from '../../context/ProductContext';
 import { NavBar } from '../../components/layouts/NavBar';
 import { CartModal } from '../../components/layouts/CartModal';
@@ -7,6 +7,11 @@ import { Product } from '../../utils/interfaces/product';
 import { FaStar } from 'react-icons/fa';
 import { BsArrowLeftCircle, BsCheck2Circle } from 'react-icons/bs';
 import { ChangeEvent, useMemo, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 export function ProductDetail() {
   const products = useProductContext();
@@ -19,6 +24,14 @@ export function ProductDetail() {
   const stars = Array.from({ length: rate }, (_e, i) => (
     <FaStar fill="#F7BC13" key={i} />
   ));
+  const similarProducts = products.products.filter((e) => {
+    return e.id != showProduct.id && e.genre.includes(showProduct.genre[1]);
+  });
+  const showSimilarProducts =
+    similarProducts.length === 0
+      ? products.products.slice(0, 3)
+      : similarProducts;
+  console.log('🚀 ~ similarProducts ~ similarProducts:', showSimilarProducts);
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
     setPrice(
@@ -33,7 +46,7 @@ export function ProductDetail() {
   return (
     <>
       <section className="book-detail-section">
-        <BsArrowLeftCircle onClick={handleClick} className="back" />
+        <BsArrowLeftCircle onClick={handleClick} className="back pointer" />
         <h2>{showProduct.name}</h2>
         <h4>{showProduct.author.name}</h4>
         <img
@@ -86,6 +99,31 @@ export function ProductDetail() {
           alt={`${showProduct.author.name} image`}
         />
         <p className="book-synopsis">{showProduct.author.description}</p>
+      </section>
+      <section className="similar-products">
+        <h2>Similar products</h2>
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={30}
+          loop={true}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={true}
+          modules={[Pagination, Navigation]}
+        >
+          {showSimilarProducts.map((p) => {
+            return (
+              <SwiperSlide key={p.id}>
+                <Link to={`/${p.id}`}>
+                  <img src={p.image} alt={`${p.name} image`} />
+                  <p>{p.name}</p>
+                  <p>{p.author.name}</p>
+                </Link>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
       </section>
       <CartModal userOptions={userOptions} idProduct={showProduct.id} />
       <NavBar />

@@ -69,7 +69,7 @@ export function CartCard(props: ICartCardProps) {
     } else {
       user.user?.cart.splice(indexDelete, indexDelete);
     }
-    toast('Remove successfully!', {
+    toast('Removed successfully!', {
       icon: '🗑️',
       style: {
         fontSize: '1.5rem',
