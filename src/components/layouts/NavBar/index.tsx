@@ -19,7 +19,10 @@ export function NavBar(): ReactNode {
         <IoCartOutline stroke="#EEEED0" />
         <p className="description">Cart</p>
       </NavLink>
-      <IoHeartOutline stroke="#EEEED0" />
+      <NavLink to="/wishlist">
+        <IoHeartOutline stroke="#EEEED0" />
+        <p className="description">Wishlist</p>
+      </NavLink>
       <NavLink to="/profile">
         <IoPersonOutline stroke="#EEEED0" />
         <p className="description">Profile</p>

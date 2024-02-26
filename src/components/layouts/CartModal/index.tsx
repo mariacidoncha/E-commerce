@@ -10,6 +10,7 @@ import {
 } from '../../../utils/interfaces/product';
 import { useAuthContext } from '../../../context/AuthContext';
 import { UserOptions } from '../../../utils/interfaces/user';
+import { FaHeart } from 'react-icons/fa';
 
 export interface ICartModalProps {
   idProduct: string;
@@ -43,6 +44,9 @@ export function CartModal(props: ICartModalProps) {
   };
   const [state, dispatch] = useReducer(reducer, initialState);
   const user = useAuthContext();
+  const wished = user.user?.wishlist.find(
+    (p) => p.toString() === props.idProduct
+  );
 
   function handleClickAdd() {
     dispatch({ type: TypesAddProduct.AddProduct });
@@ -50,6 +54,29 @@ export function CartModal(props: ICartModalProps) {
 
   function handleClickSubtract() {
     dispatch({ type: TypesAddProduct.SubtractProduct });
+  }
+
+  function handleClickAddWish() {
+    const added = user.user?.wishlist.find((e) => {
+      return e.toString() === props.idProduct;
+    });
+
+    if (!added) {
+      user.user?.wishlist.push(parseInt(props.idProduct));
+      toast.success('Successfully added!', {
+        icon: '👏',
+        style: {
+          fontSize: '1.5rem',
+        },
+      });
+    } else {
+      toast.error('This product is on your wishlist yet!', {
+        icon: '👏',
+        style: {
+          fontSize: '1.5rem',
+        },
+      });
+    }
   }
 
   function handleClickAddProduct() {
@@ -99,8 +126,9 @@ export function CartModal(props: ICartModalProps) {
         </section>
       </section>
       <section className="btns-section">
-        <button className="wish-btn">
-          <IoHeartOutline stroke="#EEEED0" />
+        <button onClick={handleClickAddWish} className="wish-btn">
+          {wished && <FaHeart fill="#EEEED0" />}
+          {!wished && <IoHeartOutline stroke="#EEEED0" />}
         </button>
         <Button handle={handleClickAddProduct} size="2rem">
           Add to cart

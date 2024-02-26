@@ -1,6 +1,6 @@
 import './productCard.css';
 import { Link } from 'react-router-dom';
-import { FaRegHeart, FaPlus, FaStar } from 'react-icons/fa';
+import { FaRegHeart, FaPlus, FaStar, FaHeart } from 'react-icons/fa';
 import { Button } from '../../../common/button';
 import { ReactNode } from 'react';
 import { useAuthContext } from '../../../../context/AuthContext';
@@ -21,6 +21,7 @@ export function ProductCard(props: IProductCardProps): ReactNode {
   const stars = Array.from({ length: rate }, (_e, i) => (
     <FaStar fill="#F7BC13" key={i} />
   ));
+  const wished = user.user?.wishlist.find((p) => p.toString() === props.id);
 
   function handleClickAdd() {
     const added = user.user?.cart.find((e) => {
@@ -53,7 +54,9 @@ export function ProductCard(props: IProductCardProps): ReactNode {
   return (
     <article className="card">
       <section className="card-icons">
-        <FaRegHeart fill="#E74800" />
+        {wished && <FaHeart fill="#E74800" />}
+        {!wished && <FaRegHeart fill="#E74800" />}
+
         <FaPlus className="pointer" onClick={handleClickAdd} />
       </section>
       <Link to={`/${props.id}`}>
