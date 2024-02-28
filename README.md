@@ -13,7 +13,7 @@ Welcome to Bookpedia, an e-commerce platform developed as a part of a master's d
 
 Bookpedia leverages React's capabilities to elevate user interaction. The project incorporates real-time updates, ensuring that users experience a dynamic interface that responds to their actions instantly. The integration of React Router enables seamless navigation, creating a single-page application that enhances the overall user journey.
 
-<img src="public/195shots_so.png" alt="mockup of bookpedia" height="1000px"/>
+<img src="public/195shots_so.png" alt="mockup of bookpedia" width="800px"/>
 
 ## ⚙️ Technologies used
 
