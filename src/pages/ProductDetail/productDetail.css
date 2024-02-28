@@ -9,7 +9,7 @@
 
 .book-detail-section .back {
   font-size: 2rem;
-  color: #e74800;
+  color: var(--primary);
 }
 
 .book-img {
@@ -28,7 +28,7 @@
 .book-price {
   font-size: 1.8rem;
   font-weight: bold;
-  color: #e74800;
+  color: var(--primary);
 }
 
 .label-btn {
@@ -39,7 +39,7 @@
   position: relative;
   padding: 0.25rem 0.5rem;
   background-color: transparent;
-  border: 0.1rem solid #adb5bd;
+  border: 0.1rem solid var(--gray);
   text-align: center;
 }
 
@@ -48,8 +48,8 @@
   right: 90%;
   bottom: 80%;
 
-  background-color: white;
-  color: #f7bc13;
+  background-color: var(--white);
+  color: var(--accent);
 
   stroke-width: 0.7;
   font-size: 1.5rem;
@@ -62,7 +62,7 @@
 }
 
 .radio-btn:checked + .option-btn {
-  border: 0.2rem solid #f7bc13;
+  border: 0.2rem solid var(--accent);
 }
 
 .radio-btn:checked + .option-btn .check-btn {
@@ -78,7 +78,7 @@
   padding: 0.25rem 0.5rem;
   font-size: 1.2rem;
   font-style: italic;
-  background-color: #eeeed0;
+  background-color: var(--lightAccent);
 }
 
 .book-synopsis {
@@ -92,7 +92,7 @@
   align-items: center;
   gap: 1rem;
   text-align: center;
-  background-color: #eeeed0;
+  background-color: var(--lightAccent);
   padding: 1rem 2rem;
 }
 
@@ -140,19 +140,19 @@
 }
 
 .swiper-slide p:last-of-type {
-  color: #adb5bd;
+  color: var(--gray);
 }
 
 .swiper-button-prev::after {
-  color: #162b5a;
+  color: var(--secondary);
 }
 
 .swiper-button-next::after {
-  color: #162b5a;
+  color: var(--secondary);
 }
 
 .similar-products .swiper-pagination-bullet-active {
-  background: #162b5a;
+  background: var(--secondary);
 }
 
 .recommended-item-header {

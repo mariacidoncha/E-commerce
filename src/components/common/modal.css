@@ -1,6 +1,6 @@
 .modal {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  background-color: white;
+  background-color: var(--white);
   border-radius: 2px;
   border-width: 0;
   padding: 0;
@@ -13,7 +13,7 @@
 }
 
 .modal::backdrop {
-  background-color: #adb5bd;
+  background-color: var(--gray);
   opacity: 0.7;
 }
 
@@ -29,5 +29,5 @@
   border: none;
   top: 5%;
   right: 2%;
-  color: #e74800;
+  color: var(--primary);
 }

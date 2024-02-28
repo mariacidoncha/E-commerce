@@ -1,5 +1,3 @@
-@import url('src/theme/theme.css');
-
 .my-button {
   display: flex;
   justify-content: center;
@@ -9,15 +7,15 @@
   font-weight: bold;
   border: none;
   border-radius: 10px;
-  color: #eeeed0;
-  background-color: #e74800;
+  color: var(--lightAccent);
+  background-color: var(--primary);
   width: 100%;
 }
 
 .my-button:hover {
-  background-color: #eeeed0;
-  color: #e74800;
-  outline: 0.2rem solid #e74800;
+  background-color: var(--lightAccent);
+  color: var(--primary);
+  outline: 0.2rem solid var(--primary);
 }
 
 .hide {

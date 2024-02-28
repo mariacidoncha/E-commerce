@@ -1,7 +1,7 @@
 .card {
   position: relative;
   padding: 1.5rem;
-  background-color: #eeeed0;
+  background-color: var(--lightAccent);
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
 }
@@ -25,7 +25,7 @@
 }
 
 .card-icons:first-child {
-  stroke: #e74800;
+  stroke: var(--primary);
 }
 
 .card-info {
@@ -38,7 +38,7 @@ span {
 }
 
 .card-euro {
-  color: #e74800;
+  color: var(--primary);
 }
 
 .card-rating {

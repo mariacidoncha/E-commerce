@@ -1,5 +1,5 @@
-import toast, { Toaster } from 'react-hot-toast';
 import './modal.css';
+import toast, { Toaster } from 'react-hot-toast';
 import { ReactNode, useEffect, useRef } from 'react';
 
 export interface IModalProps {

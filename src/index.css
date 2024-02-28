@@ -1,7 +1,9 @@
+@import url('./theme/theme.css');
+
 h1 {
   font-size: 4rem;
   font-weight: bold;
-  color: white;
+  color: var(--white);
 }
 
 h1 span {

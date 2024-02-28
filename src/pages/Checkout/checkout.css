@@ -24,7 +24,7 @@
 }
 
 .accordion-checkout li + li {
-  border-top: 0.3rem dotted #adb5bd;
+  border-top: 0.3rem dotted var(--gray);
 }
 
 .product-details p:first-child {
@@ -32,7 +32,7 @@
 }
 
 .product-details p:last-child {
-  color: #e74800;
+  color: var(--primary);
 }
 
 .accordion-checkout summary {
@@ -43,7 +43,7 @@
   cursor: pointer;
   position: relative;
   padding-left: calc(1.75rem + 0.75rem + 0.75rem);
-  background-color: #eeeed0;
+  background-color: var(--lightAccent);
   transition: color 200ms ease-in-out;
 }
 
@@ -67,16 +67,16 @@
 }
 
 .accordion-checkout details[open] summary {
-  color: #e74800;
+  color: var(--primary);
 }
 
 .price-discount {
-  color: #e74800;
+  color: var(--primary);
 }
 
 .book-option {
   display: inline;
-  color: #adb5bd;
+  color: var(--gray);
   font-weight: lighter;
 }
 
@@ -133,8 +133,8 @@
 }
 
 .coupon-btn {
-  background-color: #e74800;
-  color: #eeeed0;
+  background-color: var(--primary);
+  color: var(--lightAccent);
   border: none;
   padding: 0.25rem 0.5rem;
   border-radius: 5px;
@@ -142,7 +142,7 @@
 
 .card-section-label small {
   font-size: smaller;
-  color: #e74800;
+  color: var(--primary);
   position: absolute;
   bottom: -30%;
   left: 30%;
