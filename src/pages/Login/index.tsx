@@ -100,7 +100,6 @@ export function Login() {
             handleChange={(e: ChangeEvent<HTMLInputElement>) => {
               dispatch({ type: Types.ChangeEmail, value: e.target.value });
             }}
-            // handleChange={validateMail}
             error={usernameError}
           />
           <Input
