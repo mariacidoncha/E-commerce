@@ -32,7 +32,6 @@ function reducer(state: AuthState, action: Action) {
         return { isAuthenticated: false };
       }
       //check if is in localStorage
-      //añadir un useEffect dispatch start-up en protected route para comprobar si hay un usuario
       return { isAuthenticated: true };
 
     default:

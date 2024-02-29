@@ -71,7 +71,6 @@ export function Login() {
     } else {
       dispatch({ type: Types.Reset });
       localStorage.setItem('user', JSON.stringify(userFound));
-      // localStorage.setItem('user', userFound.id.toString());
       userAuth.setUser(userFound);
       dispatchPau({ type: 'LOGIN' });
       navigate('/home');

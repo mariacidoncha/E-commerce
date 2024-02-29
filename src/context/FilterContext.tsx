@@ -16,7 +16,7 @@ interface ProductContextType {
   setFilter: any;
 }
 
-// Inicializamos con un ProductContextType "vacío"
+// Initialize ProductContextType "void"
 const FilterContext = createContext<ProductContextType>({
   filter: { param: '', type: FilterType.name },
   setFilter: () => {},
